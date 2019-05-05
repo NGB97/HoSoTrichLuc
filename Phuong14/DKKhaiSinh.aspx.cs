@@ -66,6 +66,8 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         string TTM_QuocTich = "";
         string TTM_DanToc = "";
         string TTM_QuocGia = "";
+        string TTM_NoiDKKS = "";
+        string TTM_BHXH = "";
         string TTM_TinhTP = "";
         string TTM_QuanHuyen = "";
         string TTM_PhuongXa = "";
@@ -77,9 +79,11 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         string TTC_SoGT = "";
         string TTC_NgayCap = "";
         string TTC_NoiCap = "";
-
         string TTC_QuocTich = "";
         string TTC_DanToc = "";
+        string TTC_NoiDKKS = "";
+        string TTC_BHXH = "";
+
         string TTC_QuocGia = "";
         string TTC_TinhTP = "";
         string TTC_QuanHuyen = "";
@@ -98,6 +102,12 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         string CH_QuanHuyen = "";
         string CH_PhuongXa = "";
         string CH_SoNhaDuong = "";
+        string CH_SDT = "";
+        string CH_GioiTinh = "";
+        string CH_BHXH = "";
+        string CH_SBS = "";
+        string CH_NoiDKKS = "";
+
         string NgayDangKy = DateTime.Now.ToString("MM/dd/yyyy");
 
         if (txtNYC_HoTen.Value.Trim() != "")
@@ -226,6 +236,8 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         TTM_SoGT = txtTTM_SoGT.Value.Trim();
         TTM_NgayCap = DateTime.Parse(txtTTM_NgayCap.Value.Trim().ToString()).ToString("MM/dd/yyyy");
         TTM_NoiCap = txtTTM_NoiCap.Value.Trim();
+        TTM_NoiDKKS = txtTTM_NoiDKKS.Value.Trim();
+        TTM_BHXH = txtTTM_BHXH.Value.Trim();
 
         TTM_QuocTich = txtTTM_QuocTich.Value.Trim();
         TTM_DanToc = txtTTM_DanToc.Value.Trim();
@@ -242,6 +254,8 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         TTC_SoGT = txtTTC_SoGT.Value.Trim();
         TTC_NgayCap = DateTime.Parse(txtTTC_NgayCap.Value.Trim().ToString()).ToString("MM/dd/yyyy");
         TTC_NoiCap = txtTTC_NoiCap.Value.Trim();
+        TTC_NoiDKKS = txtTTC_NoiDKKS.Value.Trim();
+        TTC_BHXH = txtTTC_BHXH.Value.Trim();
 
 
         TTC_QuocTich = txtTTC_QuocTich.Value.Trim();
@@ -254,6 +268,7 @@ public partial class DKKhaiSinh : System.Web.UI.Page
 
         CH_HoTen = txtCH_HoTen.Value.Trim();
         CH_NamSinh = DateTime.Parse(txtCH_NamSinh.Value.Trim().ToString()).ToString("MM/dd/yyyy");
+        
         CH_LoaiGT = txtCH_LoaiGT.Value.Trim();
         CH_SoGT = txtCH_SoGT.Value.Trim();
         CH_SHK = txtCH_SHK.Value.Trim();
@@ -264,11 +279,16 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         CH_QuanHuyen = txtCH_QuanHuyen.Value.Trim();
         CH_PhuongXa = txtCH_PhuongXa.Value.Trim();
         CH_SoNhaDuong = txtCH_SoNhaDuong.Value.Trim();
-        
+        CH_SDT = txtCH_SDT.Value.Trim();
+        CH_GioiTinh = txtCH_GioiTinh.Value.Trim();
+        CH_BHXH = txtCH_BHXH.Value.Trim();
+        CH_SBS = txtCH_SBS.Value.Trim();
+        CH_NoiDKKS = txtCH_NoiDKKS.Value.Trim();
+
         if (sID == "")
         {
-            string sqlInsert = "insert into tb_DetailB(NYC_HoTen,NYC_NamSinh,NYC_SDT,NYC_Email,NYC_LoaiGT,NYC_SoGT,NYC_NgayCap,NYC_NoiCap,NYC_QuocGia,NYC_TinhTP,NYC_QuanHuyen,NYC_PhuongXa,NYC_SoNhaDuong,NYC_QuanHe,TTT_HoTen,TTT_QuanHe,TTT_GioiTinh,TTT_NgaySinh,TTT_QuocGia_NoiSinh,TTT_DanToc,TTT_TonGiao,TTT_SoDinhDanh,TTT_GiayToTuyThan,TTT_HoTenKhac,TTT_TenCSYT,TTT_ConThu,TTT_KieuSinh,TTT_CanNang,TTT_QuocGia,TTT_TinhTP,TTT_QuanHuyen,TTT_PhuongXa,TTT_SoNhaDuong,TTT_QuocGia_QQ,TTT_TinhTP_QQ,TTT_QuanHuyen_QQ,TTT_PhuongXa_QQ,TTT_SoNhaDuong_QQ,TTT_KCB,TTM_HoTen,TTM_NamSinh,TTM_LoaiGT,TTM_SoGT,TTM_NgayCap,TTM_NoiCap,TTM_QuocTich,TTM_DanToc,TTM_QuocGia,TTM_TinhTP,TTM_QuanHuyen,TTM_PhuongXa,TTM_SoNhaDuong,TTC_HoTen,TTC_NamSinh,TTC_LoaiGT,TTC_SoGT,TTC_NgayCap,TTC_NoiCap,TTC_QuocTich,TTC_DanToc,TTC_QuocGia,TTC_TinhTP,TTC_QuanHuyen,TTC_PhuongXa,TTC_SoNhaDuong,CH_HoTen,CH_NamSinh,CH_LoaiGT,CH_SoGT,CH_SHK,CH_HoSoSHK,CH_QuanHe,CH_QuocGia,CH_TinhTP,CH_QuanHuyen,CH_PhuongXa,CH_SoNhaDuong,NgayDangKy)";
-            sqlInsert += " values(N'" + NYC_HoTen + "','" + NYC_NamSinh + "','" + NYC_SDT + "','" + NYC_Email + "',N'" + NYC_LoaiGT + "','" + NYC_SoGT + "','" + NYC_NgayCap + "',N'" + NYC_NoiCap + "',N'" + NYC_QuocGia + "',N'" + NYC_TinhTP + "',N'" + NYC_QuanHuyen + "',N'" + NYC_PhuongXa + "',N'" + NYC_SoNhaDuong + "',N'" + NYC_QuanHe + "',N'" + TTT_HoTen + "',N'" + TTT_QuanHe + "',N'" + TTT_GioiTinh + "','" + TTT_NgaySinh + "',N'" + TTT_QuocGia_NoiSinh + "',N'" + TTT_DanToc + "',N'" + TTT_TonGiao + "',N'" + TTT_SoDinhDanh + "',N'" + TTT_GiayToTuyThan + "',N'" + TTT_HoTenKhac + "',N'" + TTT_TenCSYT + "','" + TTT_ConThu + "',N'" + TTT_KieuSinh + "',N'" + TTT_CanNang + "',N'" + TTT_QuocGia + "',N'" + TTT_TinhTP + "',N'" + TTT_QuanHuyen + "',N'" + TTT_PhuongXa + "',N'" + TTT_SoNhaDuong + "',N'" + TTT_QuocGia_QQ + "',N'" + TTT_TinhTP_QQ + "',N'" + TTT_QuanHuyen_QQ + "',N'" + TTT_PhuongXa_QQ + "',N'" + TTT_SoNhaDuong_QQ + "',N'" + TTT_KCB + "',N'" + TTM_HoTen + "','" + TTM_NamSinh + "',N'" + TTM_LoaiGT + "','" + TTM_SoGT + "','" + TTM_NgayCap + "',N'" + TTM_NoiCap + "',N'" + TTM_QuocTich + "',N'" + TTM_DanToc + "',N'" + TTM_QuocGia + "',N'" + TTM_TinhTP + "',N'" + TTM_QuanHuyen + "',N'" + TTM_PhuongXa + "',N'" + TTM_SoNhaDuong + "',N'" + TTC_HoTen + "',N'" + TTC_NamSinh + "',N'" + TTC_LoaiGT + "','" + TTC_SoGT + "','" + TTC_NgayCap + "',N'" + TTC_NoiCap + "',N'" + TTC_QuocTich + "',N'" + TTC_DanToc + "',N'" + TTC_QuocGia + "',N'" + TTC_TinhTP + "',N'" + TTC_QuanHuyen + "',N'" + TTC_PhuongXa + "',N'" + TTC_SoNhaDuong + "',N'" + CH_HoTen + "','" + CH_NamSinh + "',N'" + CH_LoaiGT + "','" + CH_SoGT + "',N'" + CH_SHK + "','" + CH_HoSoSHK + "',N'" + CH_QuanHe + "',N'" + CH_QuocGia + "',N'" + CH_TinhTP + "',N'" + CH_QuanHuyen + "',N'" + CH_PhuongXa + "',N'" + CH_SoNhaDuong + "','" + NgayDangKy + "')";
+            string sqlInsert = "insert into tb_DetailB(NYC_HoTen,NYC_NamSinh,NYC_SDT,NYC_Email,NYC_LoaiGT,NYC_SoGT,NYC_NgayCap,NYC_NoiCap,NYC_QuocGia,NYC_TinhTP,NYC_QuanHuyen,NYC_PhuongXa,NYC_SoNhaDuong,NYC_QuanHe,TTT_HoTen,TTT_QuanHe,TTT_GioiTinh,TTT_NgaySinh,TTT_QuocGia_NoiSinh,TTT_DanToc,TTT_TonGiao,TTT_SoDinhDanh,TTT_GiayToTuyThan,TTT_HoTenKhac,TTT_TenCSYT,TTT_ConThu,TTT_KieuSinh,TTT_CanNang,TTT_QuocGia,TTT_TinhTP,TTT_QuanHuyen,TTT_PhuongXa,TTT_SoNhaDuong,TTT_QuocGia_QQ,TTT_TinhTP_QQ,TTT_QuanHuyen_QQ,TTT_PhuongXa_QQ,TTT_SoNhaDuong_QQ,TTT_KCB,CH_SBS,TTM_HoTen,TTM_NamSinh,TTM_LoaiGT,TTM_SoGT,TTM_NgayCap,TTM_NoiCap,TTM_QuocTich,TTM_DanToc,TTM_NoiDKKS,TTM_BHXH,TTM_QuocGia,TTM_TinhTP,TTM_QuanHuyen,TTM_PhuongXa,TTM_SoNhaDuong,TTC_HoTen,TTC_NamSinh,TTC_LoaiGT,TTC_SoGT,TTC_NgayCap,TTC_NoiCap,TTC_QuocTich,TTC_DanToc,TTC_QuocGia,TTC_TinhTP,TTC_QuanHuyen,TTC_PhuongXa,TTC_SoNhaDuong,CH_HoTen,CH_NamSinh,CH_GioiTinh,CH_BHXH,CH_SDT,CH_LoaiGT,CH_SoGT,CH_SHK,CH_HoSoSHK,CH_QuanHe,CH_QuocGia,CH_TinhTP,CH_QuanHuyen,CH_PhuongXa,CH_SoNhaDuong,NgayDangKy)";
+            sqlInsert += " values(N'" + NYC_HoTen + "','" + NYC_NamSinh + "','" + NYC_SDT + "','" + NYC_Email + "',N'" + NYC_LoaiGT + "','" + NYC_SoGT + "','" + NYC_NgayCap + "',N'" + NYC_NoiCap + "',N'" + NYC_QuocGia + "',N'" + NYC_TinhTP + "',N'" + NYC_QuanHuyen + "',N'" + NYC_PhuongXa + "',N'" + NYC_SoNhaDuong + "',N'" + NYC_QuanHe + "',N'" + TTT_HoTen + "',N'" + TTT_QuanHe + "',N'" + TTT_GioiTinh + "','" + TTT_NgaySinh + "',N'" + TTT_QuocGia_NoiSinh + "',N'" + TTT_DanToc + "',N'" + TTT_TonGiao + "',N'" + TTT_SoDinhDanh + "',N'" + TTT_GiayToTuyThan + "',N'" + TTT_HoTenKhac + "',N'" + TTT_TenCSYT + "','" + TTT_ConThu + "',N'" + TTT_KieuSinh + "',N'" + TTT_CanNang + "',N'" + TTT_QuocGia + "',N'" + TTT_TinhTP + "',N'" + TTT_QuanHuyen + "',N'" + TTT_PhuongXa + "',N'" + TTT_SoNhaDuong + "',N'" + TTT_QuocGia_QQ + "',N'" + TTT_TinhTP_QQ + "',N'" + TTT_QuanHuyen_QQ + "',N'" + TTT_PhuongXa_QQ + "',N'" + TTT_SoNhaDuong_QQ + "',N'" + TTT_KCB + "','" + CH_SBS + "',N'" + TTM_HoTen + "','" + TTM_NamSinh + "',N'" + TTM_LoaiGT + "','" + TTM_SoGT + "','" + TTM_NgayCap + "',N'" + TTM_NoiCap + "',N'" + TTM_QuocTich + "',N'" + TTM_DanToc + "',N'" + TTM_NoiDKKS + "','" + TTM_BHXH + "',N'" + TTM_QuocGia + "',N'" + TTM_TinhTP + "',N'" + TTM_QuanHuyen + "',N'" + TTM_PhuongXa + "',N'" + TTM_SoNhaDuong + "',N'" + TTC_HoTen + "',N'" + TTC_NamSinh + "',N'" + TTC_LoaiGT + "','" + TTC_SoGT + "','" + TTC_NgayCap + "',N'" + TTC_NoiCap + "',N'" + TTC_QuocTich + "',N'" + TTC_DanToc + "',N'" + TTC_NoiDKKS + "','" + TTC_BHXH + "',N'" + TTC_QuocGia + "',N'" + TTC_TinhTP + "',N'" + TTC_QuanHuyen + "',N'" + TTC_PhuongXa + "',N'" + TTC_SoNhaDuong + "',N'" + CH_HoTen + "','" + CH_NamSinh + "',N'" + CH_GioiTinh + "','" + CH_BHXH + "','" + CH_SDT + "',N'" + CH_LoaiGT + "','" + CH_SoGT + "',N'" + CH_SHK + "','" + CH_HoSoSHK + "',N'" + CH_QuanHe + "',N'" + CH_NoiDKKS + "',N'" + CH_QuocGia + "',N'" + CH_TinhTP + "',N'" + CH_QuanHuyen + "',N'" + CH_PhuongXa + "',N'" + CH_SoNhaDuong + "','" + NgayDangKy + "')";
             bool ktInsert = Connect.Exec(sqlInsert);
             if (ktInsert)
             {
@@ -282,7 +302,6 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         }
 
     }
-
 
     //protected void LinkButton1_Click(object sender, EventArgs e)
     //{

@@ -36,7 +36,7 @@
           }
 </script>
     <div class="check_qh margin_top" id="abc" runat="server">
-        <h3 class="dk">hệ thống đăng ký khai sinh trực tuyến</h3>
+        <h3 class="dk">hệ thống đăng ký khai sinh</h3>
     </div>
     <div class="container position top_ft">
         <div class="col-md-offset-1  col-md-10 bg_form">
@@ -49,7 +49,7 @@
                             <label for="">Họ và tên <span>*</span></label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9 ">
-                            <input class="form-control  left" data-val="true" data-val-required="" id="txtNYC_HoTen" runat='server' name="Content.ContentName" value="" placeholder="" type="text" required pattent  />
+                            <input class="form-control  left" data-val="true" data-val-required="" id="txtNYC_HoTen" runat='server' name="Content.ContentName" value="" placeholder="" type="text" required  />
                         </div>
                     </div>
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -92,7 +92,7 @@
                             <label for="">Loại giấy tờ<span>*</span></label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtNYC_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                            <input class="form-control" data-val="true" data-val-required="" id="txtNYC_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="CMND/CCCD/HC" type="text" required autofocus />
                         </div>
                     </div>
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -443,6 +443,7 @@
                 <div class="">
                     <h6>Thông tin BHYT</h6>
                 </div>
+
                 <br>
                  <div class="row">
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -451,6 +452,21 @@
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
                             <input class="form-control" data-val="true" data-val-required="" id="txtTTT_KCB" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        </div>
+                    </div>
+                </div> <br>
+            <div class="">
+                    <h6>Bản sao trích lục hộ tịch</h6>
+                </div>
+
+                <br>
+                 <div class="row">
+                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                            <label for="">Số lượng<span>*</span></label>
+                        </div>
+                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                            <input class="form-control" data-val="true" data-val-required="" id="txtCH_SBS" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
                         </div>
                     </div>
                 </div> <br>
@@ -483,7 +499,7 @@
 
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                           <input class="form-control" data-val="true" data-val-required="" id="txtTTM_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                           <input class="form-control" data-val="true" data-val-required="" id="txtTTM_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="CMND/CCCD/HC" type="text" required autofocus />
                         </div>
                     </div>
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -534,13 +550,33 @@
                             <input class="form-control" data-val="true" data-val-required="" id="txtTTM_DanToc" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
                         </div>
                     </div>
-                </div>
-                <br>
+                </div><br>
+                <div class="row">
+                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                            <label for="">Nơi đăng kí khai sinh<span>*</span></label>
+                        </div>
+                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                            <input class="form-control" data-val="true" data-val-required="" id="txtTTM_NoiDKKS" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        </div>
+                    </div>
+                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left">
+                            <label for="">Mã số BHXH<span>*</span></label>
+
+                        </div>
+                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                            <input class="form-control" data-val="true" data-val-required="" id="txtTTM_BHXH" runat="server" name="Content.ContentName" value="" placeholder="Tra cứu tại http://baohiemxahoi.gov.vn" type="text" required autofocus />
+                        </div>
+                    </div>
+                </div><br>
+                
+              
                 <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-6">
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <h6>Nơi cư trú</h6>
                     </div>
-                    <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <%--<div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="form-check">
                             <div class="col-md-4 col-sm-4 col-xs-3">
                                 <label class="form-check-label" for="">Đã chết</label>
@@ -550,7 +586,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div>--%>
                 </div>
                 <br>
                 <div class="row">
@@ -631,7 +667,7 @@
                             <label for="">Loại giấy tờ<span>*</span></label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtTTC_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                            <input class="form-control" data-val="true" data-val-required="" id="txtTTC_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="CMND/CCCD/HC" type="text" required autofocus />
                         </div>
                     </div>
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -683,14 +719,31 @@
                             <input class="form-control" data-val="true" data-val-required="" id="txtTTC_DanToc" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
                         </div>
                     </div>
+                </div> <br>
+                <div class="row">
+                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                            <label for="">Nơi đăng kí khai sinh<span>*</span></label>
+                        </div>
+                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                            <input class="form-control" data-val="true" data-val-required="" id="txtTTC_NoiDKKS" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        </div>
+                    </div>
+                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left">
+                            <label for="">Mã số BHXH<span>*</span></label>
 
-                </div>
-                <br>
+                        </div>
+                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                            <input class="form-control" data-val="true" data-val-required="" id="txtTTC_BHXH" runat="server" name="Content.ContentName" value="" placeholder="Tra cứu tại http://baohiemxahoi.gov.vn" type="text" required autofocus />
+                        </div>
+                    </div>
+                </div><br>
                 <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-6">
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <h6>Nơi cư trú</h6>
                     </div>
-                    <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                   <%-- <div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="form-check">
                             <div class="col-md-4 col-sm-4 col-xs-3">
                                 <label class="form-check-label" for="exampleCheck1">Đã chết</label>
@@ -700,7 +753,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div>--%>
                 </div>
                 <br>
                 <div class="row">
@@ -776,13 +829,42 @@
                         </div>
                     </div>
                 </div> <br>
+                 <div class="row">
+                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 ">
+                            <label class="" for="">Giới tính<span>*</span></label>
+                        </div>
+                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                            <input class="form-control" data-val="true" data-val-required="" id="txtCH_GioiTinh" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        </div>
+                    </div>
+                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 ">
+                            <label class="" for="">Mã số BHXH<span>*</span></label>
+
+                        </div>
+                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                            <input class="form-control" data-val="true" data-val-required="" id="txtCH_BHXH" runat="server" name="Content.ContentName" value="" placeholder="Tra cứu tại http://baohiemxahoi.gov.vn" type="text" required autofocus />
+                        </div>
+                    </div>
+                 </div><br/>
+                <div class="row">
+                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                            <label class="" for="">Nơi đăng ký khai sinh<span>*</span></label>
+                        </div>
+                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                             <input class="form-control" data-val="true" data-val-required="" id="txtCH_NoiDKKS" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        </div>
+                    </div>
+                </div><br />
                 <div class="row">
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
                             <label for="">Loại giấy tờ</label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                             <input class="form-control" data-val="true" data-val-required="" id="txtCH_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                             <input class="form-control" data-val="true" data-val-required="" id="txtCH_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="CMND/CCCD/HC" type="text" required autofocus />
                         </div>
                     </div>
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -827,10 +909,19 @@
                             <input class="form-control" data-val="true" data-val-required="" id="txtCH_QuanHe" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
                         </div>
                     </div>
+                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left">
+                            <label for="">Số điện thoại<span>*</span></label>
+                        </div>
+                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                            <input class="form-control" data-val="true" data-val-required="" id="txtCH_SDT" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        </div>
+                    </div>
+
                 </div>
                
                 <div class="">
-                    <h6>Nơi ở hiện tại</h6>
+                    <h6>Nơi cư trú</h6>
                 </div>
                 <br>
                 <div class="row">
@@ -883,137 +974,6 @@
                         </div>
                     </div>
                 </div> <br>
-              <%--  <div class="">
-                    <h6>Thông tin thành viên trong hộ khẩu</h6>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
-                            <label for="" id="numTV" runat="server">Nhập số thành viên<span>*</span></label>
-                        </div>
-                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtThanhVien" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
-                        </div>
-                    </div>
-                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left">
-                            <%--<asp:LinkButton ID="LinkButton1" type="button" class="btn" OnClick="LinkButton1_Click" runat="server" >Thêm</asp:LinkButton>--%>
-                        <%--</div>
-                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        </div>
-                    </div>
-                </div> <br>--%>
-             <div class=" bd_bottom">
-                    <h5>thông tin phụ lục: Thành viên hộ gia đình</h5>
-                </div> <br>
-                <div class=''><h6>Nhập thông tin thành viên:</h6></div><br />
-                 <div class='row'>
-                    <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3 '>
-                            <label class='' for=''>Họ và tên<span>*</span></label>
-                        </div>
-                        <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-                            <input class='form-control' data-val='true' data-val-required='' id='txtTV_HoTen' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-                        </div>
-                    </div>
-                    <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3 '>
-                            <label class='' for=''>Ngày, tháng, năm sinh<span>*</span></label>
-
-                        </div>
-                        <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-                            <input class='form-control' data-val='true' data-val-required='' id='txtTV_NgaySinh' runat='server' name='Content.ContentName' value='' placeholder='' type='date' required autofocus />
-                        </div>
-                    </div>
-                </div> <br>
-                <div class='row'>
-                    <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3'>
-                            <label for=''>Mã số BHXH</label>
-                        </div>
-                        <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-                             <input class='form-control' data-val='true' data-val-required='' id='txtTV_BHXH' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-                        </div>
-                    </div>
-                    <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left'>
-                            <label for=''>Giới tính</label>
-                        </div>
-                        <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-                            <input class='form-control' data-val='true' data-val-required='' id='txtTV_GioiTinh' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-
-                        </div>
-                    </div>
-                </div> <br>
-                <div class='row'>
-                    <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3'>
-                            <label for=''>Nơi cấp giấy khai sinh <span>*</span></label>
-
-                        </div>
-                        <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-                            <input class='form-control' data-val='true' data-val-required='' id='txtTV_NoiCapGKS' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-
-                        </div>
-                    </div>
-                    <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left'>
-                            <label for=''>Quan hê với chủ hộ</label>
-                        </div>
-                        <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-                            <input class='form-control' data-val='true' data-val-required='' id='txtTV_QuanHe' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-
-                        </div>
-                    </div>
-                   
-                </div> <br>
-
-                 <div class='row'>
-                    <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3'>
-                            <label for=''>Số CMND/CCCD/HC:<span>*</span></label>
-                        </div>
-                        <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-                            <input class='form-control' data-val='true' data-val-required='' id='txtTV_CMND' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-                        </div>
-                    </div>
-                     <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-                        <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left'>
-                            <label for=''>Ghi chú</label>
-                        </div>
-                        <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-                            <input class='form-control' data-val='true' data-val-required='' id='txtTV_GhiChu' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-md-12" style="text-align: center;">
-                        <a class="btn" onclick="ThemSanPham()" >Thêm</a>
-                 </div><br>
-                <div class="col-md-12" style="text-align: center">
-                        <table id="tb-danhsachSP" class='table table-bordered table-hover dataTable'>
-                            <thead style='white-space: nowrap;'>
-                                <tr id="tr_SanPham">
-                                    <th>STT</th>
-                                    <th>Họ và tên</th>
-                                    <th>Ngày sinh</th>
-                                    <th>Mã số BHXH</th>
-                                    <th>Giới tính</th>
-                                    <th>Nơi cấp GKS</th>
-                                    <th>Quan hệ với chủ hộ</th>
-                                    <th>Số CMND</th>
-                                    <th>Ghi chú</th>
-                                </tr>
-                            </thead>
-                            <tbody id="danhSachSPChon" runat="server"></tbody>
-                        </table>
-                        <input id="listSanPham" runat="server" hidden="hidden" style="display: none" />
-                    </div>
-
-                <div id="danhsachHoKhau" runat="server">
-
-                </div>
         </div>
         <div
             class="col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-10 col-lg-10 col-sm-10 col-xs-9">
@@ -1032,7 +992,6 @@
         <div class="col-lg-offset-9 col-lg-3 col-md-offset-9 col-md-3 col-sm-offset-9 col-sm-3 col-xs-offset-9 col-xs-3">
             <asp:LinkButton id="btLuu" type="button" class="btn" OnClick="btLuu_Click" runat="server" >Gửi thông tin</asp:LinkButton>
             <button href="#" type="button" class="btn" OnClick="PrinfKhaiSinh1()" runat="server" >In</button>
-
         </div>
     <br>
 
