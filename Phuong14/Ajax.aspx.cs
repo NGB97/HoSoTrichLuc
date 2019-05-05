@@ -29,7 +29,9 @@ public partial class Ajax : System.Web.UI.Page
 
     private void PrinfKhaiSinh()
     {
-        string sqlKhaiSinh = @"select *, 'nd'=(select max(id) from tb_DetailB) from  tb_DetailB";
+        string sqlKhaiSinh = @"SELECT *
+                               FROM tb_DetailB
+                               WHERE id = (SELECT MAX(id) FROM tb_DetailB);";
         DataTable data = Connect.GetTable(sqlKhaiSinh);
         if (data.Rows.Count > 0)
         {
@@ -414,13 +416,11 @@ public partial class Ajax : System.Web.UI.Page
                     <td>" + DateTime.Parse(data.Rows[0]["TTT_NgaySinh"].ToString()).ToString("dd/MM/yyyy") + @"</td>
                     <td>" + data.Rows[0]["TTT_GioiTinh"].ToString() + @"</td>
                     <td>UBND phường 14</td>
-                    <td>" + data.Rows[0]["CH_QuanHe"].ToString() + @"</td>
+                    <td>" + data.Rows[0]["TTT_QuanHe"].ToString() + @"</td>
                     <td>" + data.Rows[0]["CH_SoGT"].ToString() + @"</td>
                     <td></td>
                 </tr>";
-            string sql = @"select * from tb_DetailB where CH_HoTen = TTC_HoTen";
-            DataTable tbSQL = Connect.GetTable(sql);
-            if (tbSQL.Rows.Count > 0)
+            if (data.Rows[0]["CH_HoTen"].ToString() == data.Rows[0]["TTC_HoTen"].ToString())
             {
                 html += @"
                 <tr>
@@ -435,9 +435,25 @@ public partial class Ajax : System.Web.UI.Page
 				    <td></td>
 				</tr>";
             }
+            else if (data.Rows[0]["CH_HoTen"].ToString() != data.Rows[0]["TTC_HoTen"].ToString() && data.Rows[0]["CH_HoTen"].ToString() != data.Rows[0]["TTM_HoTen"].ToString())
+            {
+              html += @"
+                <tr>
+				    <td>3</td>
+				    <td>" + data.Rows[0]["TTM_HoTen"].ToString() + @"</td>
+				    <td>" + data.Rows[0]["TTM_BHXH"].ToString() + @"</td>
+				    <td>" + DateTime.Parse(data.Rows[0]["TTM_NamSinh"].ToString()).ToString("dd/MM/yyyy") + @"</td>
+				    <td>Nữ</td>
+				    <td>" + data.Rows[0]["TTM_NoiDKKS"].ToString() + @"</td>
+				    <td>" + data.Rows[0]["TTM_QuanHe"].ToString() + @"</td>
+				    <td>" + data.Rows[0]["TTM_SoGT"].ToString() + @"</td>
+				    <td></td>
+				</tr>";
+                   
+            }
             else
             {
-                html += @"
+              html += @"
                 <tr>
 				    <td>3</td>
 				    <td>" + data.Rows[0]["TTC_HoTen"].ToString() + @"</td>
@@ -445,12 +461,12 @@ public partial class Ajax : System.Web.UI.Page
 				    <td>" + DateTime.Parse(data.Rows[0]["TTM_NamSinh"].ToString()).ToString("dd/MM/yyyy") + @"</td>
 				    <td>Nam</td>
 				    <td>" + data.Rows[0]["TTC_NoiDKKS"].ToString() + @"</td>
-				    <td>Chồng</td>
+				    <td>Vợ</td>
 				    <td>" + data.Rows[0]["TTC_SoGT"].ToString() + @"</td>
 				    <td></td>
 				</tr>";
             }
- 
+            
 			html +=@"</table><br>";
 
             html +=@"
@@ -944,7 +960,7 @@ public partial class Ajax : System.Web.UI.Page
                 <span class='gt'></span>
             </p>
             <p>11. Hồ sơ hộ khẩu số:
-                <span class='gt'>" + data.Rows[0]["CH_HoSoSHK"].ToString() + @"</span>
+                <span class='gt'>" + data.Rows[0]["id"].ToString() + @"</span>
                 <span class='padd1'>12.Sổ hộ khẩu số:
                     <span class='gt'>" + data.Rows[0]["CH_SHK"].ToString() + @"</span>
                 </span>

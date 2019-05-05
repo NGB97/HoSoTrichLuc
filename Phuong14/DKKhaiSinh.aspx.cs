@@ -68,6 +68,7 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         string TTM_QuocGia = "";
         string TTM_NoiDKKS = "";
         string TTM_BHXH = "";
+        string TTM_Quanhe = "";
         string TTM_TinhTP = "";
         string TTM_QuanHuyen = "";
         string TTM_PhuongXa = "";
@@ -95,7 +96,6 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         string CH_LoaiGT = "";
         string CH_SoGT = "";
         string CH_SHK = "";
-        string CH_HoSoSHK = "";
         string CH_QuanHe = "";
         string CH_QuocGia = "";
         string CH_TinhTP = "";
@@ -131,15 +131,7 @@ public partial class DKKhaiSinh : System.Web.UI.Page
             return;
         }
 
-        if (txtNYC_Email.Value.Trim() != "")
-        {
-            NYC_Email = txtNYC_Email.Value.Trim();
-        }
-        else
-        {
-            Response.Write("<script>alert('Bạn chưa nhập Nhập Email!')</script>");
-            return;
-        }
+        NYC_Email = txtNYC_Email.Value.Trim();
 
         if (txtNYC_LoaiGT.Value.Trim() != "")
         {
@@ -238,7 +230,7 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         TTM_NoiCap = txtTTM_NoiCap.Value.Trim();
         TTM_NoiDKKS = txtTTM_NoiDKKS.Value.Trim();
         TTM_BHXH = txtTTM_BHXH.Value.Trim();
-
+        TTM_Quanhe = txtTTM_QuanHe.Value.Trim();
         TTM_QuocTich = txtTTM_QuocTich.Value.Trim();
         TTM_DanToc = txtTTM_DanToc.Value.Trim();
         TTM_QuocGia = txtTTM_QuocGia.Value.Trim();
@@ -272,7 +264,6 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         CH_LoaiGT = txtCH_LoaiGT.Value.Trim();
         CH_SoGT = txtCH_SoGT.Value.Trim();
         CH_SHK = txtCH_SHK.Value.Trim();
-        CH_HoSoSHK = txtCH_HoSoSHK.Value.Trim();
         CH_QuanHe = txtCH_QuanHe.Value.Trim();
         CH_QuocGia = txtCH_QuocGia.Value.Trim();
         CH_TinhTP = txtCH_TinhTP.Value.Trim();
@@ -287,8 +278,8 @@ public partial class DKKhaiSinh : System.Web.UI.Page
 
         if (sID == "")
         {
-            string sqlInsert = "insert into tb_DetailB(NYC_HoTen,NYC_NamSinh,NYC_SDT,NYC_Email,NYC_LoaiGT,NYC_SoGT,NYC_NgayCap,NYC_NoiCap,NYC_QuocGia,NYC_TinhTP,NYC_QuanHuyen,NYC_PhuongXa,NYC_SoNhaDuong,NYC_QuanHe,TTT_HoTen,TTT_QuanHe,TTT_GioiTinh,TTT_NgaySinh,TTT_QuocGia_NoiSinh,TTT_DanToc,TTT_TonGiao,TTT_SoDinhDanh,TTT_GiayToTuyThan,TTT_HoTenKhac,TTT_TenCSYT,TTT_ConThu,TTT_KieuSinh,TTT_CanNang,TTT_QuocGia,TTT_TinhTP,TTT_QuanHuyen,TTT_PhuongXa,TTT_SoNhaDuong,TTT_QuocGia_QQ,TTT_TinhTP_QQ,TTT_QuanHuyen_QQ,TTT_PhuongXa_QQ,TTT_SoNhaDuong_QQ,TTT_KCB,CH_SBS,TTM_HoTen,TTM_NamSinh,TTM_LoaiGT,TTM_SoGT,TTM_NgayCap,TTM_NoiCap,TTM_QuocTich,TTM_DanToc,TTM_NoiDKKS,TTM_BHXH,TTM_QuocGia,TTM_TinhTP,TTM_QuanHuyen,TTM_PhuongXa,TTM_SoNhaDuong,TTC_HoTen,TTC_NamSinh,TTC_LoaiGT,TTC_SoGT,TTC_NgayCap,TTC_NoiCap,TTC_QuocTich,TTC_DanToc,TTC_QuocGia,TTC_TinhTP,TTC_QuanHuyen,TTC_PhuongXa,TTC_SoNhaDuong,CH_HoTen,CH_NamSinh,CH_GioiTinh,CH_BHXH,CH_SDT,CH_LoaiGT,CH_SoGT,CH_SHK,CH_HoSoSHK,CH_QuanHe,CH_QuocGia,CH_TinhTP,CH_QuanHuyen,CH_PhuongXa,CH_SoNhaDuong,NgayDangKy)";
-            sqlInsert += " values(N'" + NYC_HoTen + "','" + NYC_NamSinh + "','" + NYC_SDT + "','" + NYC_Email + "',N'" + NYC_LoaiGT + "','" + NYC_SoGT + "','" + NYC_NgayCap + "',N'" + NYC_NoiCap + "',N'" + NYC_QuocGia + "',N'" + NYC_TinhTP + "',N'" + NYC_QuanHuyen + "',N'" + NYC_PhuongXa + "',N'" + NYC_SoNhaDuong + "',N'" + NYC_QuanHe + "',N'" + TTT_HoTen + "',N'" + TTT_QuanHe + "',N'" + TTT_GioiTinh + "','" + TTT_NgaySinh + "',N'" + TTT_QuocGia_NoiSinh + "',N'" + TTT_DanToc + "',N'" + TTT_TonGiao + "',N'" + TTT_SoDinhDanh + "',N'" + TTT_GiayToTuyThan + "',N'" + TTT_HoTenKhac + "',N'" + TTT_TenCSYT + "','" + TTT_ConThu + "',N'" + TTT_KieuSinh + "',N'" + TTT_CanNang + "',N'" + TTT_QuocGia + "',N'" + TTT_TinhTP + "',N'" + TTT_QuanHuyen + "',N'" + TTT_PhuongXa + "',N'" + TTT_SoNhaDuong + "',N'" + TTT_QuocGia_QQ + "',N'" + TTT_TinhTP_QQ + "',N'" + TTT_QuanHuyen_QQ + "',N'" + TTT_PhuongXa_QQ + "',N'" + TTT_SoNhaDuong_QQ + "',N'" + TTT_KCB + "','" + CH_SBS + "',N'" + TTM_HoTen + "','" + TTM_NamSinh + "',N'" + TTM_LoaiGT + "','" + TTM_SoGT + "','" + TTM_NgayCap + "',N'" + TTM_NoiCap + "',N'" + TTM_QuocTich + "',N'" + TTM_DanToc + "',N'" + TTM_NoiDKKS + "','" + TTM_BHXH + "',N'" + TTM_QuocGia + "',N'" + TTM_TinhTP + "',N'" + TTM_QuanHuyen + "',N'" + TTM_PhuongXa + "',N'" + TTM_SoNhaDuong + "',N'" + TTC_HoTen + "',N'" + TTC_NamSinh + "',N'" + TTC_LoaiGT + "','" + TTC_SoGT + "','" + TTC_NgayCap + "',N'" + TTC_NoiCap + "',N'" + TTC_QuocTich + "',N'" + TTC_DanToc + "',N'" + TTC_NoiDKKS + "','" + TTC_BHXH + "',N'" + TTC_QuocGia + "',N'" + TTC_TinhTP + "',N'" + TTC_QuanHuyen + "',N'" + TTC_PhuongXa + "',N'" + TTC_SoNhaDuong + "',N'" + CH_HoTen + "','" + CH_NamSinh + "',N'" + CH_GioiTinh + "','" + CH_BHXH + "','" + CH_SDT + "',N'" + CH_LoaiGT + "','" + CH_SoGT + "',N'" + CH_SHK + "','" + CH_HoSoSHK + "',N'" + CH_QuanHe + "',N'" + CH_NoiDKKS + "',N'" + CH_QuocGia + "',N'" + CH_TinhTP + "',N'" + CH_QuanHuyen + "',N'" + CH_PhuongXa + "',N'" + CH_SoNhaDuong + "','" + NgayDangKy + "')";
+            string sqlInsert = "insert into tb_DetailB([NYC_HoTen], [NYC_NamSinh], [NYC_SDT], [NYC_Email], [NYC_LoaiGT], [NYC_SoGT], [NYC_NgayCap], [NYC_NoiCap], [NYC_QuocGia], [NYC_TinhTP], [NYC_QuanHuyen], [NYC_PhuongXa], [NYC_SoNhaDuong], [NYC_QuanHe], [TTT_HoTen], [TTT_QuanHe], [TTT_GioiTinh], [TTT_NgaySinh], [TTT_QuocGia_NoiSinh], [TTT_DanToc], [TTT_TonGiao], [TTT_SoDinhDanh], [TTT_GiayToTuyThan], [TTT_HoTenKhac], [TTT_TenCSYT], [TTT_ConThu], [TTT_KieuSinh], [TTT_CanNang], [TTT_QuocGia], [TTT_TinhTP], [TTT_QuanHuyen], [TTT_PhuongXa], [TTT_SoNhaDuong], [TTT_QuocGia_QQ], [TTT_TinhTP_QQ], [TTT_QuanHuyen_QQ], [TTT_PhuongXa_QQ], [TTT_SoNhaDuong_QQ], [TTT_KCB], [CH_SBS], [TTM_HoTen], [TTM_NamSinh], [TTM_LoaiGT], [TTM_SoGT], [TTM_NgayCap], [TTM_NoiCap], [TTM_QuocTich], [TTM_DanToc], [TTM_NoiDKKS], [TTM_BHXH], [TTM_QuanHe], [TTM_QuocGia], [TTM_TinhTP], [TTM_QuanHuyen], [TTM_PhuongXa], [TTM_SoNhaDuong], [TTC_HoTen], [TTC_NamSinh], [TTC_LoaiGT], [TTC_SoGT], [TTC_NgayCap], [TTC_NoiCap], [TTC_QuocTich], [TTC_DanToc], [TTC_NoiDKKS], [TTC_BHXH], [TTC_QuocGia], [TTC_TinhTP], [TTC_QuanHuyen], [TTC_PhuongXa], [TTC_SoNhaDuong], [CH_HoTen], [CH_NamSinh], [CH_GioiTinh], [CH_BHXH], [CH_SDT], [CH_LoaiGT], [CH_SoGT], [CH_SHK], [CH_QuanHe], [CH_NoiDKKS], [CH_QuocGia], [CH_TinhTP], [CH_QuanHuyen], [CH_PhuongXa], [CH_SoNhaDuong], [NgayDangKy])";
+            sqlInsert += " values(N'" + NYC_HoTen + "','" + NYC_NamSinh + "','" + NYC_SDT + "','" + NYC_Email + "',N'" + NYC_LoaiGT + "','" + NYC_SoGT + "','" + NYC_NgayCap + "',N'" + NYC_NoiCap + "',N'" + NYC_QuocGia + "',N'" + NYC_TinhTP + "',N'" + NYC_QuanHuyen + "',N'" + NYC_PhuongXa + "',N'" + NYC_SoNhaDuong + "',N'" + NYC_QuanHe + "',N'" + TTT_HoTen + "',N'" + TTT_QuanHe + "',N'" + TTT_GioiTinh + "','" + TTT_NgaySinh + "',N'" + TTT_QuocGia_NoiSinh + "',N'" + TTT_DanToc + "',N'" + TTT_TonGiao + "',N'" + TTT_SoDinhDanh + "',N'" + TTT_GiayToTuyThan + "',N'" + TTT_HoTenKhac + "',N'" + TTT_TenCSYT + "','" + TTT_ConThu + "',N'" + TTT_KieuSinh + "',N'" + TTT_CanNang + "',N'" + TTT_QuocGia + "',N'" + TTT_TinhTP + "',N'" + TTT_QuanHuyen + "',N'" + TTT_PhuongXa + "',N'" + TTT_SoNhaDuong + "',N'" + TTT_QuocGia_QQ + "',N'" + TTT_TinhTP_QQ + "',N'" + TTT_QuanHuyen_QQ + "',N'" + TTT_PhuongXa_QQ + "',N'" + TTT_SoNhaDuong_QQ + "',N'" + TTT_KCB + "','" + CH_SBS + "',N'" + TTM_HoTen + "','" + TTM_NamSinh + "',N'" + TTM_LoaiGT + "','" + TTM_SoGT + "','" + TTM_NgayCap + "',N'" + TTM_NoiCap + "',N'" + TTM_QuocTich + "',N'" + TTM_DanToc + "',N'" + TTM_NoiDKKS + "','" + TTM_BHXH + "',N'" + TTM_Quanhe + "',N'" + TTM_QuocGia + "',N'" + TTM_TinhTP + "',N'" + TTM_QuanHuyen + "',N'" + TTM_PhuongXa + "',N'" + TTM_SoNhaDuong + "',N'" + TTC_HoTen + "',N'" + TTC_NamSinh + "',N'" + TTC_LoaiGT + "','" + TTC_SoGT + "','" + TTC_NgayCap + "',N'" + TTC_NoiCap + "',N'" + TTC_QuocTich + "',N'" + TTC_DanToc + "',N'" + TTC_NoiDKKS + "','" + TTC_BHXH + "',N'" + TTC_QuocGia + "',N'" + TTC_TinhTP + "',N'" + TTC_QuanHuyen + "',N'" + TTC_PhuongXa + "',N'" + TTC_SoNhaDuong + "',N'" + CH_HoTen + "','" + CH_NamSinh + "',N'" + CH_GioiTinh + "','" + CH_BHXH + "','" + CH_SDT + "',N'" + CH_LoaiGT + "','" + CH_SoGT + "',N'" + CH_SHK + "',N'" + CH_QuanHe + "',N'" + CH_NoiDKKS + "',N'" + CH_QuocGia + "',N'" + CH_TinhTP + "',N'" + CH_QuanHuyen + "',N'" + CH_PhuongXa + "',N'" + CH_SoNhaDuong + "','" + NgayDangKy + "')";
             bool ktInsert = Connect.Exec(sqlInsert);
             if (ktInsert)
             {
@@ -403,57 +394,57 @@ public partial class DKKhaiSinh : System.Web.UI.Page
     //}
 
     /*Load Thanh Vien*/
-    protected void loadSP(DataTable data)
-    {
-        if (data.Rows.Count > 0)
-        {
-            string slistSP = "";
+    //protected void loadSP(DataTable data)
+    //{
+    //    if (data.Rows.Count > 0)
+    //    {
+    //        string slistSP = "";
 
-            string html = "";
-            double TongTien = 0;
-            for (int i = 0; i < data.Rows.Count; i++)
-            {
-                double DonGia = 0;
-                string TenHH = "";
+    //        string html = "";
+    //        double TongTien = 0;
+    //        for (int i = 0; i < data.Rows.Count; i++)
+    //        {
+    //            double DonGia = 0;
+    //            string TenHH = "";
 
-                string IDHangHoa = data.Rows[i]["IDHangHoa"].ToString();
+    //            string IDHangHoa = data.Rows[i]["IDHangHoa"].ToString();
 
-                string sql = "select * from tb_HangHoa where IDHangHoa = '" + IDHangHoa + "'";
-                DataTable tb = Connect.GetTable(sql);
-                if (tb.Rows.Count > 0)
-                {
-                    TenHH = tb.Rows[0]["TenHangHoa"].ToString();
-                    DonGia = double.Parse(tb.Rows[0]["GiaCuoc"].ToString());
-                }
-                double SL = double.Parse(data.Rows[i]["SoLuong"].ToString());
-                slistSP += IDHangHoa + "-" + data.Rows[i]["SoLuong"] + "-" + data.Rows[i]["MaTinhTrang"] + "-" + DonGia + "-" + (SL * DonGia);
-                html += "<tr id='tr_" + IDHangHoa + "'>";
-                html += "<td>" + (i + 1) + "</td>";
-                html += "     <td style='text-align:center;vertical-align: inherit;'>" + TenHH + "</td>";
-                html += "     <td style='text-align:center;vertical-align: inherit;'>" + SL.ToString("N0").Replace(",", ".") + "</td>";
-                html += "     <td style='text-align:center;vertical-align: inherit;'>" + DonGia.ToString("N0").Replace(",", ".") + "</td>";
-                html += "     <td style='text-align:center;vertical-align: inherit;'>" + StaticData.getField("tb_TinhTrang", "TenTinhTrang", "MaTinhTrang", data.Rows[i]["MaTinhTrang"].ToString()) + "</td>";
-                //html += "       <td style='text-align:center'>" + data.Rows[i]["DonViTinh"] + "</td>";
+    //            string sql = "select * from tb_HangHoa where IDHangHoa = '" + IDHangHoa + "'";
+    //            DataTable tb = Connect.GetTable(sql);
+    //            if (tb.Rows.Count > 0)
+    //            {
+    //                TenHH = tb.Rows[0]["TenHangHoa"].ToString();
+    //                DonGia = double.Parse(tb.Rows[0]["GiaCuoc"].ToString());
+    //            }
+    //            double SL = double.Parse(data.Rows[i]["SoLuong"].ToString());
+    //            slistSP += IDHangHoa + "-" + data.Rows[i]["SoLuong"] + "-" + data.Rows[i]["MaTinhTrang"] + "-" + DonGia + "-" + (SL * DonGia);
+    //            html += "<tr id='tr_" + IDHangHoa + "'>";
+    //            html += "<td>" + (i + 1) + "</td>";
+    //            html += "     <td style='text-align:center;vertical-align: inherit;'>" + TenHH + "</td>";
+    //            html += "     <td style='text-align:center;vertical-align: inherit;'>" + SL.ToString("N0").Replace(",", ".") + "</td>";
+    //            html += "     <td style='text-align:center;vertical-align: inherit;'>" + DonGia.ToString("N0").Replace(",", ".") + "</td>";
+    //            html += "     <td style='text-align:center;vertical-align: inherit;'>" + StaticData.getField("tb_TinhTrang", "TenTinhTrang", "MaTinhTrang", data.Rows[i]["MaTinhTrang"].ToString()) + "</td>";
+    //            //html += "       <td style='text-align:center'>" + data.Rows[i]["DonViTinh"] + "</td>";
 
-                //html += "<td style='text-align:center'><a onclick=''><img class='imgedit' id='DeleteSP_" + data.Rows[i]["Id"] + "' src='../Images/delete.png'/></a></td>";
-                html += "   <td style='text-align: center'><a style='cursor:pointer' onclick='XoaSanPham(\"" + IDHangHoa + "\")'><i class='fa fa-trash'></i></a></td>";
-                //html += "       <td style='text-align:center'>" + data.Rows[i]["HangGoi"] + "</td>";
-                if (i < data.Rows.Count - 1)
-                    slistSP += ",";
+    //            //html += "<td style='text-align:center'><a onclick=''><img class='imgedit' id='DeleteSP_" + data.Rows[i]["Id"] + "' src='../Images/delete.png'/></a></td>";
+    //            html += "   <td style='text-align: center'><a style='cursor:pointer' onclick='XoaSanPham(\"" + IDHangHoa + "\")'><i class='fa fa-trash'></i></a></td>";
+    //            //html += "       <td style='text-align:center'>" + data.Rows[i]["HangGoi"] + "</td>";
+    //            if (i < data.Rows.Count - 1)
+    //                slistSP += ",";
 
 
-                html += "</tr>";
-                double ThanhTien = double.Parse(tb.Rows[0]["GiaCuoc"].ToString());
-                TongTien += ThanhTien;
+    //            html += "</tr>";
+    //            double ThanhTien = double.Parse(tb.Rows[0]["GiaCuoc"].ToString());
+    //            TongTien += ThanhTien;
 
-            }
-            // txtTongTien.Value = TongTien.ToString();
-            //txtTongTien.Value = TongTien.ToString("##,0").Replace(",", ".");
+    //        }
+    //        // txtTongTien.Value = TongTien.ToString();
+    //        //txtTongTien.Value = TongTien.ToString("##,0").Replace(",", ".");
 
-            ////txtCKTien.Value = ((TongTien * ChietKhau) / 100).ToString();
-            //listSanPham.Value = slistSP;
-            //danhSachSPChon.InnerHtml = html;
-        }
-    }
+    //        ////txtCKTien.Value = ((TongTien * ChietKhau) / 100).ToString();
+    //        //listSanPham.Value = slistSP;
+    //        //danhSachSPChon.InnerHtml = html;
+    //    }
+    //}
 
 }

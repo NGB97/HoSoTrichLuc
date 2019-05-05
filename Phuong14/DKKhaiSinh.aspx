@@ -570,8 +570,17 @@
                         </div>
                     </div>
                 </div><br>
+                 <div class="row">
+                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
+                            <label for="">Quan hệ với chủ hộ<span>*</span></label>
+                        </div>
+                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                            <input class="form-control" data-val="true" data-val-required="" id="txtTTM_QuanHe" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        </div>
+                    </div>
+                  </div><br>
                 
-              
                 <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-6">
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <h6>Nơi cư trú</h6>
@@ -857,6 +866,15 @@
                              <input class="form-control" data-val="true" data-val-required="" id="txtCH_NoiDKKS" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
                         </div>
                     </div>
+                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left">
+                            <label for="">Số sổ hộ khẩu <span>*</span></label>
+                        </div>
+                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
+                            <input class="form-control" data-val="true" data-val-required="" id="txtCH_SHK" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+
+                        </div>
+                    </div>
                 </div><br />
                 <div class="row">
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -877,33 +895,12 @@
                         </div>
                     </div>
                 </div> <br>
-                <div class="row">
-                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
-                            <label for="">Số sổ hộ khẩu <span>*</span></label>
-
-                        </div>
-                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtCH_SHK" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
-
-                        </div>
-                    </div>
-                    <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left">
-                            <label for="">Hồ sơ hộ khẩu số</label>
-                        </div>
-                        <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtCH_HoSoSHK" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
-
-                        </div>
-                    </div>
-                   
-                </div> <br>
+              
 
                  <div class="row">
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
-                            <label for="">Quan hệ với chủ hộ của trẻ ĐKKS:<span>*</span></label>
+                            <label for="">Quan hệ của trẻ ĐKKS với chủ hộ :<span>*</span></label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
                             <input class="form-control" data-val="true" data-val-required="" id="txtCH_QuanHe" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
