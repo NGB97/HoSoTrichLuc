@@ -35,15 +35,15 @@ public partial class Ajax : System.Web.UI.Page
         DataTable data = Connect.GetTable(sqlKhaiSinh);
         if (data.Rows.Count > 0)
         {
-            // em tính cho swtich case ở đây
             string html = "";
             html += @"
             <div style='width:100%'>
-            <div style='font-family: 'Times New Roman', Times, serif; font-size: 13px; text-align: left; width: 842px; margin-top: -10px; margin-left: -20px;'>
-            <div style='margin-top: 0; margin-left: 20px'>";
+            <div style='font-family: 'Times New Roman', Times, serif; font-size: 20px'>
+            ";
             /*Form đăng kí khai sinh*/
             html += @"
             <div style='page-break-before:always'>
+            <div class='formA4'>
             <form>
                 <div class='text-center'>
                     <h4 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h4>
@@ -52,7 +52,7 @@ public partial class Ajax : System.Web.UI.Page
                 </div>
                 <p class='text-center'>Kính gửi: UBND phường 14, quận Gò Vấp, thành phố Hồ Chí Minh</p>
                 <div>
-                    <p class='tieude'>Họ, chữ đệm, tên người yêu cầu:
+                    <p>Họ, chữ đệm, tên người yêu cầu:
                         <span class='ten'>" + data.Rows[0]["NYC_HoTen"].ToString() + @"<span>
                     </p>
                     <p>CMND/CCCD số:
@@ -130,7 +130,7 @@ public partial class Ajax : System.Web.UI.Page
                         <span class='gt'>" + data.Rows[0]["TTC_SoNhaDuong"].ToString() + @"," + data.Rows[0]["TTC_PhuongXa"].ToString() + @"," + data.Rows[0]["TTC_QuanHuyen"].ToString() + @"," + data.Rows[0]["TTC_TinhTP"].ToString() + @"</span>
                     </p>
                 </div>
-                <p class='camdoan'>Tôi cam đoan nội dung đề nghị đăng ký khai sinh trên đây là đúng sự thật, được sự thỏa thuận nhất trí của các bên liên quan theo quy định pháp luật.</p>
+                <p class='camdoan'>Tôi cam đoan nội dung đề nghị đăng ký khai sinh trên đây là đúng sự thật, được sự thỏa thuận nhất trí của các bên liên quan theo quy định của pháp luật.</p>
                 <p>Tôi chịu hoàn toàn trách nhiệm trước pháp luật về nội dung cam đoan của mình.</p>
                 <p class='canphai'>Phường 14,ngày&nbsp;
                     <span>" + DateTime.Now.Day.ToString() + @"&nbsp;
@@ -145,14 +145,16 @@ public partial class Ajax : System.Web.UI.Page
                     </span>
                 </p>
                 <p class='kyten'><b> Người yêu cầu </b></p><br></br><br><br>
-                <p class='Tenkyten'><b>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</b></p>
+                <p class='kyten'><b>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</b></p>
             </form>
+            </div>
             </div>
            ";
 
             /*Form Cấp bản sao*/
             html += @"
         <div style='page-break-before:always'>
+            <div class='formA4'>
             <form>
                 <div class='text-center'>
                     <h3 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
@@ -179,7 +181,7 @@ public partial class Ajax : System.Web.UI.Page
                     <span class='gt'>" + data.Rows[0]["NYC_QuanHe"].ToString() + @"</span>
                 </p>
                 <p><b>Đề nghị cơ quan cấp bản sao trích lục Giấy Khai Sinh cho người có tên dưới đây:</b></p>
-                <p>Họ, chữ đệm, tên:
+                <p class='tieude'>Họ, chữ đệm, tên:
                     <span class='ten'>" + data.Rows[0]["TTT_HoTen"].ToString() + @"<span>
                 </p>
                 <p>Ngày,tháng,năm sinh:
@@ -227,13 +229,15 @@ public partial class Ajax : System.Web.UI.Page
              </span>
            </p>
         <p class='kyten'><b> Người yêu cầu </b></p><br><br><br><br>
-        <p class='Tenkyten'><b>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</b></p>
+        <p class='kyten'><b>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</b></p>
         </form> 
+        </div>
         </div>            
         ";
 
             /*Bảo Hiểm*/
             html += @"<div style='page-break-before:always'>
+    <div class='formA4'>
     <form>
         <div>
             <div class='flex justify-content-between'>
@@ -338,15 +342,17 @@ public partial class Ajax : System.Web.UI.Page
                         </span>
                 </p>
                 <p class='kyten'><b> Người yêu cầu </b></p><br><br><br><br>
-                <p class='Tenkyten'><b>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</b></p>
+                <p class='kyten'><b>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</b></p>
             </div>
         </div>
     </form>
 </div>
+</div>
 ";
             /*Bảo hiểm 2*/
             html += @"
-        <div style='page-break-before:always'>	
+        <div style='page-break-before:always'>
+        <div class='formA4'>
 			<h3 class='title text-center'>PHỤC LỤC: THÀNH VIÊN HỘ GIA ĐÌNH</h3>
 			<div>
                 <div class='flex justify-content-between'>
@@ -461,7 +467,7 @@ public partial class Ajax : System.Web.UI.Page
 				    <td>" + DateTime.Parse(data.Rows[0]["TTM_NamSinh"].ToString()).ToString("dd/MM/yyyy") + @"</td>
 				    <td>Nam</td>
 				    <td>" + data.Rows[0]["TTC_NoiDKKS"].ToString() + @"</td>
-				    <td>Vợ</td>
+				    <td>Chồng</td>
 				    <td>" + data.Rows[0]["TTC_SoGT"].ToString() + @"</td>
 				    <td></td>
 				</tr>";
@@ -492,10 +498,11 @@ public partial class Ajax : System.Web.UI.Page
                         </span>
                 </p>
                 <p class='kyten'><b> Người kê khai</b></p><br><br><br><br>
-                <p class='Tenkyten'><b>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</b></p>
+                <p class='kyten'><b>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</b></p>
             </div>
         </div>
 		</div>
+    </div>
 ";
 
 
@@ -503,6 +510,7 @@ public partial class Ajax : System.Web.UI.Page
             /*Y tế*/
             html += @"
 <div style='page-break-before:always'>
+    <div class='formA4'>
     <form>
         <h3 class='title text-center'>PHIẾU CUNG CẤP THÔNG TIN TRẺ SINH TRONG NĂM</h3>
         <div class='flex justify-content-between'>
@@ -559,9 +567,10 @@ public partial class Ajax : System.Web.UI.Page
         <p>Số điện thoại liên hệ:
             <span class='gt'>" + data.Rows[0]["NYC_SDT"].ToString() + @"</span>
         </p>
-        <p class='text-right padd-right'><b>Người kê khai</b></p><br>
-        <p class='text-right padd-right1 padd'><b>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</b>
+        <p class='text-right padd-right'><b>Người kê khai</b></p><br><br><br>
+        <p class='text-right padd-right'><b>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</b>
     </form>
+    </div>
 </div>
 ";
 
@@ -569,6 +578,7 @@ public partial class Ajax : System.Web.UI.Page
 
             html += @"
     <div style='page-break-before:always'>
+    <div class='formA4'>
         <div class='text-center'>
 		    <h3 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
 		    <h3 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h3>
@@ -650,7 +660,8 @@ public partial class Ajax : System.Web.UI.Page
 				<span> Nơi cấp:
 					<span class='gt'>" + data.Rows[0]["NYC_NoiCap"].ToString() + @"</span>
 				</span>
-			</p>		
+			</p>
+        </div>
 		</div>";
             
 
@@ -688,12 +699,14 @@ public partial class Ajax : System.Web.UI.Page
 	    </div>
 	</div>
 </div>
+</div>
 ";
 
             /*Phiếu hẹn*/
             int ngayhen = int.Parse(DateTime.Now.Day.ToString()) + 12;
             html += @"
          <div style='page-break-before:always'>
+        <div class='formA4'>
 			<div>
                 <div class='flex justify-content-between'>
                     <div class='item'>
@@ -777,11 +790,13 @@ public partial class Ajax : System.Web.UI.Page
                 </div>
             </div>
 		</div>
+        </div>
         ";
 
             /*Nhập khẩu*/
             html += @"
         <div style='page-break-before:always'>
+        <div class='formA4'>
 			<div class='text-center'>
 			    <h3 class='text-center margin-bottom1'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
 			    <h3 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h3>
@@ -882,23 +897,25 @@ public partial class Ajax : System.Web.UI.Page
 			<div class='flex justify-content-between text-center'>
                 <div class='item'>
                 	<p>Phường 14, ngày " + DateTime.Now.Day.ToString() + @", tháng " + DateTime.Now.Month.ToString() + @", năm " + DateTime.Now.Year.ToString() + @"</p>
-                    <p class='margin-bottom1'>Ý KIẾN CỦA CHỦ HỘ</p>
+                    <p class='ten sub-title title'>Ý KIẾN CỦA CHỦ HỘ</p>
                     <p>(Ghi rõ nội dung và ký, ghi rõ họ tên)</p>
                 </div>
                 <div class='item text-center padd-right2'>
                 	<p>Phường 14, ngày " + DateTime.Now.Day.ToString() + @", tháng " + DateTime.Now.Month.ToString() + @", năm " + DateTime.Now.Year.ToString() + @"</p>
-                    <p class='margin-bottom1'>NGƯỜI VIẾT PHIẾU BÁO</p>
+                    <p class='sub-tiele title ten'>NGƯỜI VIẾT PHIẾU BÁO</p>
                     <p>(Ghi rõ nội dung và ký, ghi rõ họ tên)</p>
                 </div>
-            </div><br><br><br><br><br><br><br>
-    <div>
-    <p>XÁC NHẬN CỦA CÔNG AN......................................................................................................................</p>
-    <p>...............................................................................................................................................................................</p>    
-    <p>...............................................................................................................................................................................</p>    
-    <p>...............................................................................................................................................................................</p>    
-    <p>...............................................................................................................................................................................</p>    
-    <p>...............................................................................................................................................................................</p>    
-    <p>...............................................................................................................................................................................</p>
+            </div>
+    </div>
+    <div style='page-break-before:always'>
+    <br><br>
+    <p>XÁC NHẬN CỦA CÔNG AN..............................................................................................................................................................</p>
+    <p>...................................................................................................................................................................................................................</p>    
+    <p>...................................................................................................................................................................................................................</p>    
+    <p>...................................................................................................................................................................................................................</p>    
+    <p>...................................................................................................................................................................................................................</p>    
+    <p>...................................................................................................................................................................................................................</p>    
+    <p>...................................................................................................................................................................................................................</p>
 	<div>        
     <div class='flex justify-content-between text-center'>
                 <div class='item'>
@@ -908,15 +925,17 @@ public partial class Ajax : System.Web.UI.Page
                 </div>
                 <div class='item text-center padd-right2'>
                 	<p>Phường 14, ngày " + DateTime.Now.Day.ToString() + @", tháng " + DateTime.Now.Month.ToString() + @", năm " + DateTime.Now.Year.ToString() + @"</p>
-                    <p class='margin-bottom1'>TRƯỞNG CÔNG AN</p>
+                    <p class='sub-title title ten'>TRƯỞNG CÔNG AN</p>
                     <p>(Ghi rõ nội dung và ký, ghi rõ họ tên)</p>
                 </div>
             </div>
+        </div>
     </div>
     ";
             /*Phiếu thay đổi HK*/
             html += @"
         <div style='page-break-before:always'>
+        <div class='formA4'>
             <div class='flex justify-content-between'>
                 <div class='item text-center'>
                     <h3 class='title'>CÔNG AN TP.HỒ CHÍ MINH</h4>
@@ -990,11 +1009,13 @@ public partial class Ajax : System.Web.UI.Page
                     <p>(Ký, ghi rõ họ tên và đóng dấu)</p>
                 </div>
             </div>
+    </div>
         </div>
 
 ";
             html += @"
         <div style='page-break-before:always'>
+        <div class='formA4'>
             <p class='canphai size-small padd-right4'>Mẫu DC01 ban hành kèm theo</p>
             <p class='canphai size-small'>Thông tư số 66/2015/TT-BCA ngày 15/12/2015</p>
             <p class='size-small'>Tỉnh/thành phố: thành phố Hồ Chí Minh</p>
@@ -1008,7 +1029,7 @@ public partial class Ajax : System.Web.UI.Page
                     </p>
                     <p>2. Ngày, tháng, năm sinh:
                         <span class='gt'>" + DateTime.Parse(data.Rows[0]["TTT_NgaySinh"].ToString()).ToString("dd/MM/yyyy") + @"</span>
-                        <span class='padd1'>3. Nhóm máu:
+                        <span class='pl-150'>3. Nhóm máu:
                             <span class='gt'></span>
                         </span>
                     </p>
@@ -1026,16 +1047,16 @@ public partial class Ajax : System.Web.UI.Page
                     </p>
                     <p>8. Dân tộc:
                         <span class='gt'>" + data.Rows[0]["TTT_DanToc"].ToString() + @"</span>
-                        <span class='padd'>9. Quốc tịch:
+                        <span class='pl-50'>9. Quốc tịch:
                             <span class='gt'>" + data.Rows[0]["TTT_QuocGia"].ToString() + @"</span>
                         </span>
-                        <span class='padd'>Quốc tịch khác:
-                            <span class='gt'></span>
+                        <span class='pl-50'>Quốc tịch khác:
+                            <span></span>
                         </span>
                     </p>
                     <p>10.Tôn giáo:
                         <span class='gt'></span>
-                        <span class='padd1'>11. Số ĐDCN/Số CMND:
+                        <span class='pl-50'>11. Số ĐDCN/Số CMND:
                             <span class='gt'></span>
                         </span>
                     </p>
@@ -1049,30 +1070,30 @@ public partial class Ajax : System.Web.UI.Page
                         <span class='gt ten'>" + data.Rows[0]["TTC_HoTen"].ToString() + @"</span>
                     </p>
                     <p>Quốc tịch:
-                        <span class='gt'>" + data.Rows[0]["TTC_QuocTich"].ToString() + @"</span>
-                        <span class='padd'>khác:</span>
-                        <span class='padd1'>Số ĐDCN/Số CMND:
-                            <span class='gt'>" + data.Rows[0]["TTC_SoGT"].ToString() + @"</span>
+                        <span class='plr-25'>" + data.Rows[0]["TTC_QuocTich"].ToString() + @"</span>
+                        <span class='pr-80'>khác:</span>
+                        <span>Số ĐDCN/Số CMND:
+                            <span class='plr-25'>" + data.Rows[0]["TTC_SoGT"].ToString() + @"</span>
                         </span>
                     </p>
                     <p>Họ, chữ đệm và tên mẹ:
                         <span class='gt ten'>" + data.Rows[0]["TTM_HoTen"].ToString() + @"</span>
                     </p>
                     <p>Quốc tịch:
-                        <span class='gt'>" + data.Rows[0]["TTM_QuocTich"].ToString() + @"</span>
-                        <span class='padd'>khác:</span>
-                        <span class='padd1'>Số ĐDCN/Số CMND:
-                            <span class='gt'>" + data.Rows[0]["TTM_SoGT"].ToString() + @"</span>
+                        <span class='plr-25'>" + data.Rows[0]["TTM_QuocTich"].ToString() + @"</span>
+                        <span class='pr-80'>khác:</span>
+                        <span>Số ĐDCN/Số CMND:
+                            <span class='plr-25'>" + data.Rows[0]["TTM_SoGT"].ToString() + @"</span>
                         </span>
                     </p>
                     <p>Họ, chữ đệm và tên vợ/chồng:
                         <span class='gt ten'></span>
                     </p>
                     <p>Quốc tịch:
-                        <span class='gt'>.</span>
-                        <span class='padd'>khác:</span>
-                        <span class='padd1'>Số ĐDCN/Số CMND:
-                            <span class='gt'>.</span>
+                        <span class='plr-25'>.</span>
+                        <span class='pr-80'>khác:</span>
+                        <span>Số ĐDCN/Số CMND:
+                            <span class='plr-25'>.</span>
                         </span>
                     </p>
                     <p>Họ, chữ đệm và tên người đại diện hợp pháp (nếu có):
@@ -1089,10 +1110,10 @@ public partial class Ajax : System.Web.UI.Page
                         <span class='gt ten'>" + data.Rows[0]["CH_HoTen"].ToString() + @"</span>
                     </p>
                     <p>Quốc tịch:
-                        <span class='gt'>" + data.Rows[0]["CH_QuocGia"].ToString() + @"</span>
-                        <span class='padd'>khác:</span>
-                        <span class='padd1'>Số ĐDCN/Số CMND:
-                            <span class='gt'>" + data.Rows[0]["CH_SoGT"].ToString() + @"</span>
+                        <span class='plr-25'>" + data.Rows[0]["CH_QuocGia"].ToString() + @"</span>
+                        <span class='pr-80'>khác:</span>
+                        <span>Số ĐDCN/Số CMND:
+                            <span class='plr-25'>" + data.Rows[0]["CH_SoGT"].ToString() + @"</span>
                         </span>
                     </p>
                     <p>16. Quan hệ với chủ hộ:
@@ -1123,9 +1144,9 @@ public partial class Ajax : System.Web.UI.Page
                 </div>
             </div>
         </div>
+        </div>
 ";
-
-            html += @" </div></div></div>";
+            html += @"</div></div>";
             Response.Write(html);
         }
     }

@@ -11,7 +11,6 @@ public partial class DKKhaiSinh : System.Web.UI.Page
     string sID = "";
     protected void Page_Load(object sender, EventArgs e)
     {
- 
     }
 
     protected void btLuu_Click(object sender, EventArgs e)
@@ -166,7 +165,7 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         if (txtNYC_NgayCap.Value.Trim() != "")
         {
             
-            NYC_NgayCap =DateTime.Parse(txtNYC_NgayCap.Value.Trim().ToString()).ToString("MM/dd/yyyy");
+                NYC_NgayCap =DateTime.Parse(txtNYC_NgayCap.Value.Trim().ToString()).ToString("MM/dd/yyyy");
         }
         else
         {
@@ -218,8 +217,6 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         TTT_PhuongXa_QQ = txtTTT_PhuongXa_QQ.Value.Trim();
         TTT_SoNhaDuong_QQ = txtTTT_SoNhaDuong_QQ.Value.Trim();
         TTT_KCB = txtTTT_KCB.Value.Trim();
-
-
 
 
         TTM_HoTen = txtTTM_HoTen.Value.Trim();
@@ -284,6 +281,7 @@ public partial class DKKhaiSinh : System.Web.UI.Page
             if (ktInsert)
             {
                 Response.Redirect("DKKhaiSinh.aspx");
+                Response.Write("<script>alert('Gữi thông tin thành công! Có thể bắt đầu IN')</script>");
             }
             else
             {
@@ -293,158 +291,5 @@ public partial class DKKhaiSinh : System.Web.UI.Page
         }
 
     }
-
-    //protected void LinkButton1_Click(object sender, EventArgs e)
-    //{
-    //    int pNumb = 0;
-    //    string html = "";
-    //    pNumb = int.Parse(txtThanhVien.Value.Trim());
-    //    if (txtThanhVien.Value.Trim() != "" && txtThanhVien.Value.Trim() != null)
-    //    {
-    //        for (int i = 1; i <= pNumb; i++)
-    //        {
-    //            html += "<div class='col-md-12'><hr>";
-    //            html += "<span class='title1'></span></div>";
-    //            html += "<div class=''><h6>Thành viên:" + i + "</h6></div><br />";
-    //            html += @"
-    //        <div class='row'>
-    //                <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-    //                    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3 '>
-    //                        <label class='' for=''>Họ và tên<span>*</span></label>
-    //                    </div>
-    //                    <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-    //                        <input class='form-control' data-val='true' data-val-required='' id='txtTV_HoTen' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-    //                    </div>
-    //                </div>
-    //                <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-    //                    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3 '>
-    //                        <label class='' for=''>Ngày, tháng, năm sinh<span>*</span></label>
-
-    //                    </div>
-    //                    <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-    //                        <input class='form-control' data-val='true' data-val-required='' id='txtTV_NgaySinh' runat='server' name='Content.ContentName' value='' placeholder='' type='date' required autofocus />
-    //                    </div>
-    //                </div>
-    //            </div> <br>
-    //            <div class='row'>
-    //                <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-    //                    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3'>
-    //                        <label for=''>Mã số BHXH</label>
-    //                    </div>
-    //                    <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-    //                         <input class='form-control' data-val='true' data-val-required='' id='txtTV_BHXH' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-    //                    </div>
-    //                </div>
-    //                <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-    //                    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left'>
-    //                        <label for=''>Giới tính</label>
-    //                    </div>
-    //                    <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-    //                        <input class='form-control' data-val='true' data-val-required='' id='txtTV_GioiTinh' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-
-    //                    </div>
-    //                </div>
-    //            </div> <br>
-    //            <div class='row'>
-    //                <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-    //                    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3'>
-    //                        <label for=''>Nơi cấp giấy khai sinh <span>*</span></label>
-
-    //                    </div>
-    //                    <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-    //                        <input class='form-control' data-val='true' data-val-required='' id='txtTV_NoiCapGKS' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-
-    //                    </div>
-    //                </div>
-    //                <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-    //                    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left'>
-    //                        <label for=''>Quan hê với chủ hộ</label>
-    //                    </div>
-    //                    <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-    //                        <input class='form-control' data-val='true' data-val-required='' id='txtTV_QuanHe' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-
-    //                    </div>
-    //                </div>
-                   
-    //            </div> <br>
-
-    //             <div class='row'>
-    //                <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-    //                    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3'>
-    //                        <label for=''>Số CMND/CCCD/HC:<span>*</span></label>
-    //                    </div>
-    //                    <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-    //                        <input class='form-control' data-val='true' data-val-required='' id='txtTV_CMND' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-    //                    </div>
-    //                </div>
-    //                 <div class='row col-lg-6 col-md-6 col-sm-6 col-xs-6'>
-    //                    <div class='col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left'>
-    //                        <label for=''>Ghi chú</label>
-    //                    </div>
-    //                    <div class='row col-lg-8 col-md-8 col-sm-8 col-xs-9'>
-    //                        <input class='form-control' data-val='true' data-val-required='' id='txtTV_GhiChu' runat='server' name='Content.ContentName' value='' placeholder='' type='text' required autofocus />
-
-    //                    </div>
-    //                </div>
-    //            </div><br>               
-    //            ";
-    //        }
-    //        danhsachHoKhau.InnerHtml = html;
-    //    }
-    //}
-
-    /*Load Thanh Vien*/
-    //protected void loadSP(DataTable data)
-    //{
-    //    if (data.Rows.Count > 0)
-    //    {
-    //        string slistSP = "";
-
-    //        string html = "";
-    //        double TongTien = 0;
-    //        for (int i = 0; i < data.Rows.Count; i++)
-    //        {
-    //            double DonGia = 0;
-    //            string TenHH = "";
-
-    //            string IDHangHoa = data.Rows[i]["IDHangHoa"].ToString();
-
-    //            string sql = "select * from tb_HangHoa where IDHangHoa = '" + IDHangHoa + "'";
-    //            DataTable tb = Connect.GetTable(sql);
-    //            if (tb.Rows.Count > 0)
-    //            {
-    //                TenHH = tb.Rows[0]["TenHangHoa"].ToString();
-    //                DonGia = double.Parse(tb.Rows[0]["GiaCuoc"].ToString());
-    //            }
-    //            double SL = double.Parse(data.Rows[i]["SoLuong"].ToString());
-    //            slistSP += IDHangHoa + "-" + data.Rows[i]["SoLuong"] + "-" + data.Rows[i]["MaTinhTrang"] + "-" + DonGia + "-" + (SL * DonGia);
-    //            html += "<tr id='tr_" + IDHangHoa + "'>";
-    //            html += "<td>" + (i + 1) + "</td>";
-    //            html += "     <td style='text-align:center;vertical-align: inherit;'>" + TenHH + "</td>";
-    //            html += "     <td style='text-align:center;vertical-align: inherit;'>" + SL.ToString("N0").Replace(",", ".") + "</td>";
-    //            html += "     <td style='text-align:center;vertical-align: inherit;'>" + DonGia.ToString("N0").Replace(",", ".") + "</td>";
-    //            html += "     <td style='text-align:center;vertical-align: inherit;'>" + StaticData.getField("tb_TinhTrang", "TenTinhTrang", "MaTinhTrang", data.Rows[i]["MaTinhTrang"].ToString()) + "</td>";
-    //            //html += "       <td style='text-align:center'>" + data.Rows[i]["DonViTinh"] + "</td>";
-
-    //            //html += "<td style='text-align:center'><a onclick=''><img class='imgedit' id='DeleteSP_" + data.Rows[i]["Id"] + "' src='../Images/delete.png'/></a></td>";
-    //            html += "   <td style='text-align: center'><a style='cursor:pointer' onclick='XoaSanPham(\"" + IDHangHoa + "\")'><i class='fa fa-trash'></i></a></td>";
-    //            //html += "       <td style='text-align:center'>" + data.Rows[i]["HangGoi"] + "</td>";
-    //            if (i < data.Rows.Count - 1)
-    //                slistSP += ",";
-
-
-    //            html += "</tr>";
-    //            double ThanhTien = double.Parse(tb.Rows[0]["GiaCuoc"].ToString());
-    //            TongTien += ThanhTien;
-
-    //        }
-    //        // txtTongTien.Value = TongTien.ToString();
-    //        //txtTongTien.Value = TongTien.ToString("##,0").Replace(",", ".");
-
-    //        ////txtCKTien.Value = ((TongTien * ChietKhau) / 100).ToString();
-    //        //listSanPham.Value = slistSP;
-    //        //danhSachSPChon.InnerHtml = html;
-    //    }
-    //}
 
 }

@@ -2,9 +2,11 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <script src="Content/cssdatepicker/moment.min.js"></script>
+    <link href="Content/cssdatepicker/pikaday.css" rel="stylesheet" />
+    <script src="Content/cssdatepicker/pikaday.js"></script>
 <script>
     function PrinfKhaiSinh1() {
-          //  alert(idDonHang);
             var xmlhttp;
             if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp = new XMLHttpRequest();
@@ -33,7 +35,7 @@
             }
             xmlhttp.open("GET", "../Ajax.aspx?Action=PrinfKhaiSinh", true);
             xmlhttp.send();
-          }
+    }
 </script>
     <div class="check_qh margin_top" id="abc" runat="server">
         <h3 class="dk">hệ thống đăng ký khai sinh</h3>
@@ -57,7 +59,7 @@
                             <label for="">Năm sinh <span>*</span></label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtNYC_NamSinh" runat="server" name="Content.ContentName" value="" placeholder="" type="date" required autofocus />
+                            <input class="form-control" data-val="true" data-val-required="" id="txtNYC_NamSinh" name="Content.ContentName"  type="text" value="" placeholder="ngày / tháng / năm" runat="server" />
                         </div>
                     </div>
                 </div>
@@ -110,7 +112,7 @@
                             <label for="">Ngày cấp <span>*</span></label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtNYC_NgayCap" runat="server" name="Content.ContentName" value="" placeholder="" type="date" required autofocus />
+                            <input class="form-control" data-val="true" data-val-required="" id="txtNYC_NgayCap" runat="server" name="Content.ContentName" value="" placeholder="ngày / tháng / năm" type="text" required autofocus />
                         </div>
                     </div>
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -211,7 +213,10 @@
                             <label for="">Giới tính <span>*</span></label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtTTT_GioiTinh" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                            <select class="form-control" data-val="true" data-val-required="" id="txtTTT_GioiTinh" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus>
+                                <option>Nam</option>
+                                <option>Nữ</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -219,7 +224,7 @@
                             <label for="">Ngày sinh <span>*</span></label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtTTT_NgaySinh" runat="server" name="Content.ContentName" value="" placeholder="" type="date" required autofocus />
+                            <input class="form-control" data-val="true" data-val-required="" id="txtTTT_NgaySinh" runat="server" name="Content.ContentName" value="" placeholder="ngày / tháng / năm" type="text" required autofocus />
 
                         </div>
                     </div>
@@ -488,7 +493,7 @@
                             <label for ="">Năm Sinh</label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtTTM_NamSinh" runat="server" name="Content.ContentName" value="" placeholder="" type="date" required autofocus />
+                            <input class="form-control" data-val="true" data-val-required="" id="txtTTM_NamSinh" runat="server" name="Content.ContentName" value="" placeholder="ngày / tháng / năm" type="text" required autofocus />
                         </div>
                     </div>
                 </div> <br>
@@ -527,7 +532,7 @@
 
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtTTM_NgayCap" runat="server" name="Content.ContentName" value="" placeholder="" type="date" required autofocus />
+                            <input class="form-control" data-val="true" data-val-required="" id="txtTTM_NgayCap" runat="server" name="Content.ContentName" value="" placeholder="ngày / tháng / năm" type="text" required autofocus />
                         </div>
                     </div>
                 </div>
@@ -666,7 +671,7 @@
                             <label for="">Năm Sinh<span>*</span></label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtTTC_NamSinh" runat="server" name="Content.ContentName" value="" placeholder="" type="date" required autofocus />
+                            <input class="form-control" data-val="true" data-val-required="" id="txtTTC_NamSinh" runat="server" name="Content.ContentName" value="" placeholder="ngày / tháng / năm" type="text" required autofocus />
                         </div>
                     </div>
                 </div> <br>
@@ -706,7 +711,7 @@
 
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtTTC_NgayCap" runat="server" name="Content.ContentName" value="" placeholder="" type="date" required autofocus />
+                            <input class="form-control" data-val="true" data-val-required="" id="txtTTC_NgayCap" runat="server" name="Content.ContentName" value="" placeholder="ngày / tháng / năm" type="text" required autofocus />
                         </div>
                     </div>
                 </div> <br>
@@ -834,7 +839,7 @@
 
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtCH_NamSinh" runat="server" name="Content.ContentName" value="" placeholder="" type="date" required autofocus />
+                            <input class="form-control" data-val="true" data-val-required="" id="txtCH_NamSinh" runat="server" name="Content.ContentName" value="" placeholder="ngày / tháng / năm" type="text" required autofocus />
                         </div>
                     </div>
                 </div> <br>
@@ -844,7 +849,10 @@
                             <label class="" for="">Giới tính<span>*</span></label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                            <input class="form-control" data-val="true" data-val-required="" id="txtCH_GioiTinh" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                            <select class="form-control" data-val="true" data-val-required="" id="txtCH_GioiTinh" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus>
+                                <option>Nam</option>
+                                <option>Nữ</option>
+                            </select>
                         </div>
                     </div>
                      <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -863,7 +871,7 @@
                             <label class="" for="">Nơi đăng ký khai sinh<span>*</span></label>
                         </div>
                         <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                             <input class="form-control" data-val="true" data-val-required="" id="txtCH_NoiDKKS" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                             <input class="form-control" data-val="true" data-val-required="" id="txtCH_NoiDKKS" runat="server" name="Content.ContentName" value="" placeholder="ngày / tháng / năm" type="text" required autofocus />
                         </div>
                     </div>
                     <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -972,8 +980,7 @@
                     </div>
                 </div> <br>
         </div>
-        <div
-            class="col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-10 col-lg-10 col-sm-10 col-xs-9">
+        <div class="col-md-offset-1 col-lg-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-10 col-lg-10 col-sm-10 col-xs-9">
             <div class="form-check">
                 <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -991,5 +998,81 @@
             <button href="#" type="button" class="btn" OnClick="PrinfKhaiSinh1()" runat="server" >In</button>
         </div>
     <br>
+    </div>
+    <script type="text/javascript">
+        var picker = new Pikaday(
+        {
+            field: document.getElementById('ContentPlaceHolder1_txtNYC_NamSinh'),
+            firstDay: 1,
+            format: "DD/MM/YYYY",
+            minDate: new Date(1900, 1, 1),
+            maxDate: new Date(2020, 12, 31),
+            yearRange: [2000, 2020]
+            });
+        var picker = new Pikaday(
+        {
+            field: document.getElementById('ContentPlaceHolder1_txtNYC_NgayCap'),
+            firstDay: 1,
+            format: "DD/MM/YYYY",
+            minDate: new Date(1900, 1, 1),
+            maxDate: new Date(2020, 12, 31),
+            yearRange: [2000, 2020]
+            });
+        var picker = new Pikaday(
+        {
+            field: document.getElementById('ContentPlaceHolder1_txtTTT_NgaySinh'),
+            firstDay: 1,
+            format: "DD/MM/YYYY",
+            minDate: new Date(1900, 1, 1),
+            maxDate: new Date(2020, 12, 31),
+            yearRange: [2000, 2020]
+            });
+        var picker = new Pikaday(
+        {
+            field: document.getElementById('ContentPlaceHolder1_txtTTM_NamSinh'),
+            firstDay: 1,
+            format: "DD/MM/YYYY",
+            minDate: new Date(1900, 1, 1),
+            maxDate: new Date(2020, 12, 31),
+            yearRange: [2000, 2020]
+            });
+        var picker = new Pikaday(
+        {
+            field: document.getElementById('ContentPlaceHolder1_txtNYC_NgayCap'),
+            firstDay: 1,
+            format: "DD/MM/YYYY",
+            minDate: new Date(1900, 1, 1),
+            maxDate: new Date(2020, 12, 31),
+            yearRange: [2000, 2020]
+            });
+        var picker = new Pikaday(
+        {
+            field: document.getElementById('ContentPlaceHolder1_txtTTC_NamSinh'),
+            firstDay: 1,
+            format: "DD/MM/YYYY",
+            minDate: new Date(1900, 1, 1),
+            maxDate: new Date(2020, 12, 31),
+            yearRange: [2000, 2020]
+            });
+        var picker = new Pikaday(
+        {
+            field: document.getElementById('ContentPlaceHolder1_txtTTC_NgayCap'),
+            firstDay: 1,
+            format: "DD/MM/YYYY",
+            minDate: new Date(1900, 1, 1),
+            maxDate: new Date(2020, 12, 31),
+            yearRange: [2000, 2020]
+            });
+        var picker = new Pikaday(
+        {
+            field: document.getElementById('ContentPlaceHolder1_txtCH_NamSinh'),
+            firstDay: 1,
+            format: "DD/MM/YYYY",
+            minDate: new Date(1900, 1, 1),
+            maxDate: new Date(2020, 12, 31),
+            yearRange: [2000, 2020]
+            });
+      
+    </script>
 
 </asp:Content>

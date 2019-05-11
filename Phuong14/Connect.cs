@@ -16,7 +16,7 @@ public static class Connect
 {
     public static SqlConnection ConnectSQL()
     {
-        string s = @"Data Source=DESKTOP-K5QSM0P, 1433;Initial Catalog=QuanLy_ToKhaiLienThong;User ID=sa ; Password=sa;Connect Timeout=10";
+        string s = @"Data Source=, 1433;Initial Catalog=QuanLy_ToKhaiLienThong;User ID=sa ; Password=sa;Connect Timeout=10";
         SqlConnection conn = new SqlConnection(s);
         return conn;
     }
