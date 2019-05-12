@@ -46,9 +46,9 @@ public partial class Ajax : System.Web.UI.Page
             <div class='formA4'>
             <form>
                 <div class='text-center'>
-                    <h4 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h4>
-                    <h4 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h4>
-                    <h4 class='title'>TỜ KHAI ĐĂNG KÝ KHAI SINH</h4>
+                    <h2 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
+                    <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
+                    <h2 class='title'>TỜ KHAI ĐĂNG KÝ KHAI SINH</h2>
                 </div>
                 <p class='text-center'>Kính gửi: UBND phường 14, quận Gò Vấp, thành phố Hồ Chí Minh</p>
                 <div>
@@ -157,9 +157,9 @@ public partial class Ajax : System.Web.UI.Page
             <div class='formA4'>
             <form>
                 <div class='text-center'>
-                    <h3 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
-                    <h3 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h3>
-                    <h3 class='title'>TỜ KHAI CẤP BẢN SAO TRÍCH LỤC HỘ TỊCH</h3>
+                    <h2 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
+                    <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
+                    <h2 class='title'>TỜ KHAI CẤP BẢN SAO TRÍCH LỤC HỘ TỊCH</h2>
                 </div>
                 <p class='kg'>Kính gửi: UBND phường 14, quận Gò Vấp, thành phố Hồ Chí Minh</p>
                 <p class='tieude'>Họ, chữ đệm, tên người yêu cầu:
@@ -242,18 +242,18 @@ public partial class Ajax : System.Web.UI.Page
         <div>
             <div class='flex justify-content-between'>
                 <div class='item'>
-                    <h4 class='line-title'>BẢO HIỂM XÃ HỘI VIỆT NAM</h4>
-                    <h4 class='item'> </h4>
+                    <h2 class='line-title'>BẢO HIỂM XÃ HỘI VIỆT NAM</h2>
+                    <h2 class='item'> </h2>
                 </div>
                 <div class='item text-center'>
-                    <h4 class='title margin-bottom-3px'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h4>
-                    <h4 class='sub-title line-title '> Độc lập - Tự do - Hạnh phúc </h4>
+                    <h2 class='title margin-bottom-3px'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
+                    <h2 class='sub-title line-title '> Độc lập - Tự do - Hạnh phúc </h2>
                 </div>
             </div>
         </div>
         <div>
-            <h4 class='margin-bottom2'>TỜ KHAI</h4>
-            <h4 class='title'>THAM GIA, ĐIỀU CHỈNH THÔNG TIN BẢO HIỂM XÃ HỘI, BẢO HIỂM Y TẾ</h4>
+            <h2 class='margin-bottom2'>TỜ KHAI</h2>
+            <h2 class='title'>THAM GIA, ĐIỀU CHỈNH THÔNG TIN BẢO HIỂM XÃ HỘI, BẢO HIỂM Y TẾ</h2>
             <p class='text-center'>Kính gửi: UBND phường 14, quận Gò Vấp, thành phố Hồ Chí Minh</p>
             <p class='tieude'>I.Phần kê khai bắt buộc:
                 <p>Họ, chữ đệm, tên:
@@ -353,7 +353,7 @@ public partial class Ajax : System.Web.UI.Page
             html += @"
         <div style='page-break-before:always'>
         <div class='formA4'>
-			<h3 class='title text-center'>PHỤC LỤC: THÀNH VIÊN HỘ GIA ĐÌNH</h3>
+			<h2 class='title text-center'>PHỤC LỤC: THÀNH VIÊN HỘ GIA ĐÌNH</h2>
 			<div>
                 <div class='flex justify-content-between'>
                     <div class='item'>
@@ -512,7 +512,7 @@ public partial class Ajax : System.Web.UI.Page
 <div style='page-break-before:always'>
     <div class='formA4'>
     <form>
-        <h3 class='title text-center'>PHIẾU CUNG CẤP THÔNG TIN TRẺ SINH TRONG NĂM</h3>
+        <h2 class='title text-center'>PHIẾU CUNG CẤP THÔNG TIN TRẺ SINH TRONG NĂM</h2>
         <div class='flex justify-content-between'>
             <div class='item'>
                 <p>Họ tên trẻ:
@@ -580,10 +580,10 @@ public partial class Ajax : System.Web.UI.Page
     <div style='page-break-before:always'>
     <div class='formA4'>
         <div class='text-center'>
-		    <h3 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
-		    <h3 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h3>
-		    <h3 class='title'>GIẤY ỦY QUYỀN</h3>
-		    <h3 class='sub-title'>(Dành cho cá nhân)</h3>
+		    <h2 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
+		    <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
+		    <h2 class='title'>GIẤY ỦY QUYỀN</h2>
+		    <h2 class='sub-title'>(Dành cho cá nhân)</h2>
 		</div>
         <p>Căn cứ Bộ Luật Dân Sự nước Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam.</p>
 		<p>Căn cứ vào các văn bản pháp luật hiện hành.</p>
@@ -710,12 +710,12 @@ public partial class Ajax : System.Web.UI.Page
 			<div>
                 <div class='flex justify-content-between'>
                     <div class='item'>
-                        <h4 class='title'>UBND PHƯỜNG 6</h4>
-                        <h4 class='sub-title line-title'>BỘ PHẬN HỘ TỊCH</h4>
+                        <h2 class='title'>UBND PHƯỜNG 6</h2>
+                        <h2 class='sub-title line-title'>BỘ PHẬN HỘ TỊCH</h2>
                     </div>
                     <div class='item text-center'>
-                        <h4 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h4>
-                        <h4 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h4>
+                        <h2 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
+                        <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
                     </div>
                 </div>
             </div>
@@ -728,7 +728,7 @@ public partial class Ajax : System.Web.UI.Page
                 </div>
             </div>
             <div>
-                <h4 class='tex-center'>GIẤY TIẾP NHẬN HỒ SƠ VÀ HẸN TRẢ KẾT QUẢ</h4>
+                <h2 class='tex-center'>GIẤY TIẾP NHẬN HỒ SƠ VÀ HẸN TRẢ KẾT QUẢ</h2>
                 <p>Bộ phận tiếp nhận và trả kết quả: Bộ phận Hộ tịch</p>
                 <p>Tiếp nhận hồ sơ của ông/bà: 
                     <span class='gt'>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</span>
@@ -798,10 +798,10 @@ public partial class Ajax : System.Web.UI.Page
         <div style='page-break-before:always'>
         <div class='formA4'>
 			<div class='text-center'>
-			    <h3 class='text-center margin-bottom1'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
-			    <h3 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h3>
+			    <h2 class='text-center margin-bottom1'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
+			    <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
 			</div>
-			<h3 class='title text-center'>PHIẾU BÁO THAY ĐỔI HỘ KHẨU, NHÂN KHẨU</h3>
+			<h2 class='title text-center'>PHIẾU BÁO THAY ĐỔI HỘ KHẨU, NHÂN KHẨU</h2>
 			<p class='text-center'> Kính gửi: Công an quận Gò Vấp, thành phố Hồ Chí Minh</p>
 			<p class='tieude'>I. Thông tin về người viết phiếu báo</p>
 						<p>1.Họ và tên:
@@ -890,19 +890,17 @@ public partial class Ajax : System.Web.UI.Page
 					<tr><td>1</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 					<tr><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 					<tr><td>3</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-					<tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
-					<tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 				</tbody>
 			</table><br>
-			<div class='flex justify-content-between text-center'>
+			<div class='flex justify-content-between text-center margin-bottom'>
                 <div class='item'>
                 	<p>Phường 14, ngày " + DateTime.Now.Day.ToString() + @", tháng " + DateTime.Now.Month.ToString() + @", năm " + DateTime.Now.Year.ToString() + @"</p>
-                    <p class='ten sub-title title'>Ý KIẾN CỦA CHỦ HỘ</p>
+                    <p class='ten margin-bottom3'>Ý KIẾN CỦA CHỦ HỘ</p>
                     <p>(Ghi rõ nội dung và ký, ghi rõ họ tên)</p>
                 </div>
                 <div class='item text-center padd-right2'>
                 	<p>Phường 14, ngày " + DateTime.Now.Day.ToString() + @", tháng " + DateTime.Now.Month.ToString() + @", năm " + DateTime.Now.Year.ToString() + @"</p>
-                    <p class='sub-tiele title ten'>NGƯỜI VIẾT PHIẾU BÁO</p>
+                    <p class='ten margin-bottom3'>NGƯỜI VIẾT PHIẾU BÁO</p>
                     <p>(Ghi rõ nội dung và ký, ghi rõ họ tên)</p>
                 </div>
             </div>
@@ -938,15 +936,15 @@ public partial class Ajax : System.Web.UI.Page
         <div class='formA4'>
             <div class='flex justify-content-between'>
                 <div class='item text-center'>
-                    <h3 class='title'>CÔNG AN TP.HỒ CHÍ MINH</h4>
-                        <h3 class='sub-title line-title'>CÔNG AN QUẬN GÒ VẤP</h4>
+                    <h2 class='title'>CÔNG AN TP.HỒ CHÍ MINH</h2>
+                        <h2 class='sub-title line-title'>CÔNG AN QUẬN GÒ VẤP</h2>
                 </div>
                 <div class='item text-center'>
-                    <h3 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h4>
-                        <h3 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h4>
+                    <h2 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
+                        <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
                 </div>
             </div>
-            <h3 class=' margin-bottom1'>PHIẾU THÔNG TIN THAY ĐỔI VỀ HỘ KHẨU, NHÂN KHẨU</h3>
+            <h2 class=' margin-bottom1'>PHIẾU THÔNG TIN THAY ĐỔI VỀ HỘ KHẨU, NHÂN KHẨU</h2>
             <p class='text-center'><b>Kính gửi: Công an Phường 14, Quận Gò Vấp, Thành phố Hồ Chí Minh</b></p><br>
             <p>1. Họ và tên người có thay đổi:
                 <span class='ten gt'>" + data.Rows[0]["TTT_HoTen"].ToString() + @"</span>
@@ -1021,7 +1019,7 @@ public partial class Ajax : System.Web.UI.Page
             <p class='size-small'>Tỉnh/thành phố: thành phố Hồ Chí Minh</p>
             <p class='size-small'>Quận/huyện/thị xã: quận Gò Vấp</p>
             <p class='size-small'>Xã/phường /thị trấn: phường 14</p>
-            <h3 class='tieude'>PHIẾU THU THẬP THÔNG TIN DÂN CƯ</h3>
+            <h2 class='tieude'>PHIẾU THU THẬP THÔNG TIN DÂN CƯ</h2>
             <div class='border-page'>
                 <div class='pl-5'>
                     <p>1. Họ, chữ đệm và tên khai sinh:
@@ -1125,15 +1123,15 @@ public partial class Ajax : System.Web.UI.Page
                     <p class='canphai padd-right'> Ngày khai: " + DateTime.Now.Day.ToString() + @"/ " + DateTime.Now.Month.ToString() + @"/ " + DateTime.Now.Year.ToString() + @"
                         <span class='gt'>.</span>
                     </p>
-                    <div class='flex justify-content-between'>
+                 <div class='flex justify-content-between'>
                     <div class='item'>
-                    	<p class='tieude text-center'>Trưởng Công an</p>
-                        <p class='tieude text-center'>xã/phường/thị trấn</p>
+                    	<p class='tieude text-center margin-bottom'>Trưởng Công an</p>
+                        <p class='tieude text-center margin-bottom'>xã/phường/thị trấn</p>
                         <p class='text-center'>(Ký, ghi rõ họ tên và đóng dấu)</p>
                     </div>
                     <div class='item'>
-                    	<p class='tieude text-center'>Cảnh sát khu vực/</p>
-                        <p class='tieude text-center'>Công an viên</p>
+                    	<p class='tieude text-center margin-bottom'>Cảnh sát khu vực/</p>
+                        <p class='tieude text-center margin-bottom'>Công an viên</p>
                         <p class='text-center'>(Ký, ghi rõ họ tên)</p>
                     </div>
                     <div class='item'>
@@ -1141,9 +1139,8 @@ public partial class Ajax : System.Web.UI.Page
                     	<p class='text-center padd-right2'>(Ký, ghi rõ họ tên)</p>
                     </div>
                 </div>
-                </div>
+              </div>
             </div>
-        </div>
         </div>
 ";
             html += @"</div></div>";

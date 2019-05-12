@@ -182,6 +182,7 @@ public partial class DKKhaiSinh : System.Web.UI.Page
             Response.Write("<script>alert('Bạn chưa nhập Nơi Cấp!')</script>");
             return;
         }
+
         NYC_NamSinh = DateTime.Parse(txtNYC_NamSinh.Value.Trim().ToString()).ToString("MM/dd/yyyy");
         NYC_QuocGia = txtNYC_QuocGia.Value.Trim();
         NYC_TinhTP = txtNYC_TinhTP.Value.Trim();
