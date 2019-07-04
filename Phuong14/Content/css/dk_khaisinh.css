@@ -6,7 +6,7 @@
     }
 
     h2, h3, h4 {
-        font-size: 35px;
+        font-size:25px;
         text-align: center;
     }
 
@@ -258,7 +258,7 @@
 
     .border-page {
         width: 820px;
-        height: 1120px;
+        height: 900px;
         border: 1px solid black;
         padding-left: 20px;
     }

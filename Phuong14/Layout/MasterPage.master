@@ -7,11 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Hệ thống đăng ký khai sinh</title>
-    <link href="Content/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="Content/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Hệ thống đăng ký Hộ tịch</title>
+    <link rel="shortcut icon" href="../index.html">
+    <link href="../Content/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Content/font-awesome-4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="Content/css/style2.css">
+    <link rel="stylesheet" href="../Content/css/style2.css">
 </head>
 <body>
     <nav class="navbar navbar-default">
@@ -24,10 +25,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand"  href="../index.html">
                     <div class="logo_chu">
                         <div class="col-xs-3 col-sm-2">
-                            <img src="Content/img/quochuy.png" width="40px" alt="">
+                            <img src="../Content/img/quochuy.png" width="40px" alt="">
                         </div>
                         <div class="col-xs-9 col-sm-10">
                             <h3 class="logo_chu1">UBND PHƯỜNG 14</h3>
@@ -37,6 +38,7 @@
                 </a>
 
             </div>
+           
            <p class='padd color-count margin_bottom'>Ngày: <asp:Label id="lbNgay" type="label" data-val="true" data-val-required="" value="" runat="server"></asp:Label></p>           
            <p class='padd color-count'>Hồ sơ đăng ký: <asp:Label id="lbCount" type="label" data-val="true" data-val-required="" value="" runat="server"></asp:Label></p>
 
@@ -56,7 +58,7 @@
                 <div class="row col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div class="top_ft">
                             <div class="col-xs-3 col-sm-2 col-md-2">
-                                <img src="Content/img/quochuy.png" class="img" alt="">
+                                <img src="../Content/img/quochuy.png" class="img" alt="">
                             </div>
                             <div class="col-xs-9 col-sm-10 col-xs-9 col-md-10 logo_ft">
                                 <h3>UBND PHƯỜNG 14</h3>
@@ -68,7 +70,7 @@
                 
             </div>
             <div style="text-align:center;color:white;">
-                    <p style="font-size:13px">Copy right © 2018&nbsp;<strong><a style="color:deepskyblue" href="http://academyhcm.edu.vn">Academy HCM</a></strong> | Design by <strong><a style="color:deepskyblue" href="https://gsotgroup.vn">GSOT GROUP</a></strong> All Rights Reserved</p>
+                    <p style="font-size:13px">Copy right © 2018&nbsp;<strong><a style="color:deepskyblue" href="http://academyhcm.edu.vn">Academy HCM</a></strong> | Design by <strong><a style="color:deepskyblue" href="http://academyhcm.edu.vn">Academy HCM</a></strong> All Rights Reserved</p>
                 </div>
         </div>
     </div>

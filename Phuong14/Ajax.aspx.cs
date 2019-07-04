@@ -21,6 +21,8 @@ public partial class Ajax : System.Web.UI.Page
             {
                 case "PrinfKhaiSinh":
                     PrinfKhaiSinh(); break;
+                case "PrinfKhaiTu":
+                    PrinfKhaiTu(); break;
 
             }
         }
@@ -46,9 +48,9 @@ public partial class Ajax : System.Web.UI.Page
             <div class='formA4'>
             <form>
                 <div class='text-center'>
-                    <h2 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
-                    <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
-                    <h2 class='title'>TỜ KHAI ĐĂNG KÝ KHAI SINH</h2>
+                    <h4 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h4>
+                    <h4 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h4>
+                    <h4 class='title'>TỜ KHAI ĐĂNG KÝ KHAI SINH</h4>
                 </div>
                 <p class='text-center'>Kính gửi: UBND phường 14, quận Gò Vấp, thành phố Hồ Chí Minh</p>
                 <div>
@@ -144,22 +146,20 @@ public partial class Ajax : System.Web.UI.Page
                         </span>
                     </span>
                 </p>
-                <p class='kyten'><b> Người yêu cầu </b></p><br></br><br><br>
+                <p class='kyten'><b> Người yêu cầu </b></p><br><br>
                 <p class='kyten'><b>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</b></p>
             </form>
             </div>
-            </div>
-           ";
-
+         </div>";
             /*Form Cấp bản sao*/
             html += @"
         <div style='page-break-before:always'>
             <div class='formA4'>
             <form>
                 <div class='text-center'>
-                    <h2 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
-                    <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
-                    <h2 class='title'>TỜ KHAI CẤP BẢN SAO TRÍCH LỤC HỘ TỊCH</h2>
+                    <h3 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
+                    <h3 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h3>
+                    <h3 class='title'>TỜ KHAI CẤP BẢN SAO TRÍCH LỤC HỘ TỊCH</h3>
                 </div>
                 <p class='kg'>Kính gửi: UBND phường 14, quận Gò Vấp, thành phố Hồ Chí Minh</p>
                 <p class='tieude'>Họ, chữ đệm, tên người yêu cầu:
@@ -242,18 +242,18 @@ public partial class Ajax : System.Web.UI.Page
         <div>
             <div class='flex justify-content-between'>
                 <div class='item'>
-                    <h2 class='line-title'>BẢO HIỂM XÃ HỘI VIỆT NAM</h2>
-                    <h2 class='item'> </h2>
+                    <h3 class='line-title'>BẢO HIỂM XÃ HỘI VIỆT NAM</h3>
+                    <h3 class='item'> </h3>
                 </div>
                 <div class='item text-center'>
-                    <h2 class='title margin-bottom-3px'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
-                    <h2 class='sub-title line-title '> Độc lập - Tự do - Hạnh phúc </h2>
+                    <h3 class='title margin-bottom-3px'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
+                    <h3 class='sub-title line-title '> Độc lập - Tự do - Hạnh phúc </h3>
                 </div>
             </div>
         </div>
         <div>
-            <h2 class='margin-bottom2'>TỜ KHAI</h2>
-            <h2 class='title'>THAM GIA, ĐIỀU CHỈNH THÔNG TIN BẢO HIỂM XÃ HỘI, BẢO HIỂM Y TẾ</h2>
+            <h3 class='margin-bottom2'>TỜ KHAI</h3>
+            <h3 class='title'>THAM GIA, ĐIỀU CHỈNH THÔNG TIN BẢO HIỂM XÃ HỘI, BẢO HIỂM Y TẾ</h3>
             <p class='text-center'>Kính gửi: UBND phường 14, quận Gò Vấp, thành phố Hồ Chí Minh</p>
             <p class='tieude'>I.Phần kê khai bắt buộc:
                 <p>Họ, chữ đệm, tên:
@@ -353,7 +353,7 @@ public partial class Ajax : System.Web.UI.Page
             html += @"
         <div style='page-break-before:always'>
         <div class='formA4'>
-			<h2 class='title text-center'>PHỤC LỤC: THÀNH VIÊN HỘ GIA ĐÌNH</h2>
+			<h3 class='title text-center'>PHỤC LỤC: THÀNH VIÊN HỘ GIA ĐÌNH</h3>
 			<div>
                 <div class='flex justify-content-between'>
                     <div class='item'>
@@ -512,7 +512,7 @@ public partial class Ajax : System.Web.UI.Page
 <div style='page-break-before:always'>
     <div class='formA4'>
     <form>
-        <h2 class='title text-center'>PHIẾU CUNG CẤP THÔNG TIN TRẺ SINH TRONG NĂM</h2>
+        <h3 class='title text-center'>PHIẾU CUNG CẤP THÔNG TIN TRẺ SINH TRONG NĂM</h3>
         <div class='flex justify-content-between'>
             <div class='item'>
                 <p>Họ tên trẻ:
@@ -580,10 +580,10 @@ public partial class Ajax : System.Web.UI.Page
     <div style='page-break-before:always'>
     <div class='formA4'>
         <div class='text-center'>
-		    <h2 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
-		    <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
-		    <h2 class='title'>GIẤY ỦY QUYỀN</h2>
-		    <h2 class='sub-title'>(Dành cho cá nhân)</h2>
+		    <h3 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
+		    <h3 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h3>
+		    <h3 class='title'>GIẤY ỦY QUYỀN</h3>
+		    <h3 class='sub-title'>(Dành cho cá nhân)</h3>
 		</div>
         <p>Căn cứ Bộ Luật Dân Sự nước Cộng Hòa Xã Hội Chủ Nghĩa Việt Nam.</p>
 		<p>Căn cứ vào các văn bản pháp luật hiện hành.</p>
@@ -710,12 +710,12 @@ public partial class Ajax : System.Web.UI.Page
 			<div>
                 <div class='flex justify-content-between'>
                     <div class='item'>
-                        <h2 class='title'>UBND PHƯỜNG 6</h2>
-                        <h2 class='sub-title line-title'>BỘ PHẬN HỘ TỊCH</h2>
+                        <h3 class='title'>UBND PHƯỜNG 6</h3>
+                        <h3 class='sub-title line-title'>BỘ PHẬN HỘ TỊCH</h3>
                     </div>
                     <div class='item text-center'>
-                        <h2 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
-                        <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
+                        <h3 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
+                        <h3 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h3>
                     </div>
                 </div>
             </div>
@@ -728,7 +728,7 @@ public partial class Ajax : System.Web.UI.Page
                 </div>
             </div>
             <div>
-                <h2 class='tex-center'>GIẤY TIẾP NHẬN HỒ SƠ VÀ HẸN TRẢ KẾT QUẢ</h2>
+                <h3 class='tex-center'>GIẤY TIẾP NHẬN HỒ SƠ VÀ HẸN TRẢ KẾT QUẢ</h3>
                 <p>Bộ phận tiếp nhận và trả kết quả: Bộ phận Hộ tịch</p>
                 <p>Tiếp nhận hồ sơ của ông/bà: 
                     <span class='gt'>" + data.Rows[0]["NYC_HoTen"].ToString() + @"</span>
@@ -798,10 +798,10 @@ public partial class Ajax : System.Web.UI.Page
         <div style='page-break-before:always'>
         <div class='formA4'>
 			<div class='text-center'>
-			    <h2 class='text-center margin-bottom1'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
-			    <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
+			    <h3 class='text-center margin-bottom1'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
+			    <h3 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h3>
 			</div>
-			<h2 class='title text-center'>PHIẾU BÁO THAY ĐỔI HỘ KHẨU, NHÂN KHẨU</h2>
+			<h3 class='title text-center'>PHIẾU BÁO THAY ĐỔI HỘ KHẨU, NHÂN KHẨU</h3>
 			<p class='text-center'> Kính gửi: Công an quận Gò Vấp, thành phố Hồ Chí Minh</p>
 			<p class='tieude'>I. Thông tin về người viết phiếu báo</p>
 						<p>1.Họ và tên:
@@ -936,15 +936,15 @@ public partial class Ajax : System.Web.UI.Page
         <div class='formA4'>
             <div class='flex justify-content-between'>
                 <div class='item text-center'>
-                    <h2 class='title'>CÔNG AN TP.HỒ CHÍ MINH</h2>
-                        <h2 class='sub-title line-title'>CÔNG AN QUẬN GÒ VẤP</h2>
+                    <h3 class='title'>CÔNG AN TP.HỒ CHÍ MINH</h3>
+                        <h3 class='sub-title line-title'>CÔNG AN QUẬN GÒ VẤP</h3>
                 </div>
                 <div class='item text-center'>
-                    <h2 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h2>
-                        <h2 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h2>
+                    <h3 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h3>
+                        <h3 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h3>
                 </div>
             </div>
-            <h2 class=' margin-bottom1'>PHIẾU THÔNG TIN THAY ĐỔI VỀ HỘ KHẨU, NHÂN KHẨU</h2>
+            <h3 class=' margin-bottom1'>PHIẾU THÔNG TIN THAY ĐỔI VỀ HỘ KHẨU, NHÂN KHẨU</h3>
             <p class='text-center'><b>Kính gửi: Công an Phường 14, Quận Gò Vấp, Thành phố Hồ Chí Minh</b></p><br>
             <p>1. Họ và tên người có thay đổi:
                 <span class='ten gt'>" + data.Rows[0]["TTT_HoTen"].ToString() + @"</span>
@@ -1019,7 +1019,7 @@ public partial class Ajax : System.Web.UI.Page
             <p class='size-small'>Tỉnh/thành phố: thành phố Hồ Chí Minh</p>
             <p class='size-small'>Quận/huyện/thị xã: quận Gò Vấp</p>
             <p class='size-small'>Xã/phường /thị trấn: phường 14</p>
-            <h2 class='tieude'>PHIẾU THU THẬP THÔNG TIN DÂN CƯ</h2>
+            <h3 class='tieude'>PHIẾU THU THẬP THÔNG TIN DÂN CƯ</h3>
             <div class='border-page'>
                 <div class='pl-5'>
                     <p>1. Họ, chữ đệm và tên khai sinh:
@@ -1147,6 +1147,131 @@ public partial class Ajax : System.Web.UI.Page
             Response.Write(html);
         }
     }
-    
+    private void PrinfKhaiTu()
+    {
+        string sqlKhaiTu = @"SELECT *
+                               FROM tb_KhaiTu
+                               WHERE idKhaiTu = (SELECT MAX(idKhaiTu) FROM tb_KhaiTu);";
+        DataTable data = Connect.GetTable(sqlKhaiTu);
+        if (data.Rows.Count > 0)
+        {
+            string html = "";
+            html += @"
+            <div style='width:100%'>
+            <div style='font-family: 'Times New Roman', Times, serif;font-size: 20px'>
+            ";
+            /*Form đăng kí khai Tử*/
+            html += @"
+            <div style='page-break-before:always'>
+            <div class='formA4'>
+            <form>
+                <div class='text-center'>
+                    <h4 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h4>
+                    <h4 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h4>
+                    <h4 class='title'>TỜ KHAI ĐĂNG KÝ KHAI SINH</h4>
+                </div>
+                <p class='text-center'>Kính gửi: UBND phường 14, quận Gò Vấp, thành phố Hồ Chí Minh</p>
+                <div>
+                    <p>Họ, chữ đệm, tên người yêu cầu:
+                        <span class='ten'><span>
+                    </p>
+                    <p>CMND/CCCD số:
+                        <span class='gt'></span>
+                    </p>
+                    <p>Ngày cấp:
+                        <span class='gt'></span>
+                        <span class='ttgiua'>Nơi cấp:
+                            <span class='gt'></span>
+                        </span>
+                    </p>
+                    <p>Nơi cư trú:
+                        <span class='gt'></span>
+                    </p>
+                    <p>Quan hệ với trẻ được làm khai sinh:
+                        <span class='gt'></span>
+                    </p>
+                    <p><b>Đề nghị cơ quan đăng ký khai sinh cho người dưới đây:</b></p>
+                    <p class='tieude'>Họ, chữ đệm, tên:
+                        <span class=' gt ten'><span>
+                    </p>
+                    <p>Ngày,tháng,năm sinh:
+                        <span class='gt'></span>
+                    </p>
+                    <p>Bằng chữ:
+                        <span class='gt'></span>
+                    </p>
+                    <p>Nơi sinh:
+                        <span class='gt'></span>
+                    </p>
+                    <p>Giới tính:
+                        <span class='gt'></span>
+                        <span class='padd'>Dân tộc:
+                            <span class='gt'></span>
+                            <span class='padd'>Quốc tịch:
+                                <span class='gt'></span>
+                            </span>
+                        </span>
+                    </p>
+                    <p>Quê quán:
+                        <span class='gt'></span>
+                    </p>
+                </div>
+                <div>
+                    <p class='tieude'>Họ, chữ đệm, tên người mẹ:
+                        <span class='ten'><span>
+                    </p>
+                    <p>Năm sinh:
+                        <span class='gt'></span>
+                        <span class='padd'>Dân tộc:
+                            <span class='gt'></span>
+                            <span class='padd'>Quốc tịch:
+                                <span class='gt'></span>
+                            </span>
+                        </span>
+                    </p>
+                    <p>Quê quán:
+                        <span class='gt'></span>
+                    </p>
+                </div>
+                <div>
+                    <p class='tieude'>Họ, chữ đệm, tên người cha:
+                        <span class='ten'><span>
+                    </p>
+                    <p>Năm sinh:
+                        <span class='gt'></span>
+                        <span class='padd'>Dân tộc:
+                            <span class='gt'></span>
+                            <span class='padd'>Quốc tịch:
+                                <span class='gt'></span>
+                            </span>
+                        </span>
+                    </p>
+                    <p>Quê quán:
+                        <span class='gt'></span>
+                    </p>
+                </div>
+                <p class='camdoan'>Tôi cam đoan nội dung đề nghị đăng ký khai sinh trên đây là đúng sự thật, được sự thỏa thuận nhất trí của các bên liên quan theo quy định của pháp luật.</p>
+                <p>Tôi chịu hoàn toàn trách nhiệm trước pháp luật về nội dung cam đoan của mình.</p>
+                <p class='canphai'>Phường 14,ngày&nbsp;
+                    <span>" + DateTime.Now.Day.ToString() + @"&nbsp;
+                        <span>tháng&nbsp;
+                            <span>" + DateTime.Now.Month.ToString() + @"&nbsp;
+                                <span>năm&nbsp;
+                                    <span>" + DateTime.Now.Year.ToString() + @"
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                    </span>
+                </p>
+                <p class='kyten'><b> Người yêu cầu </b></p><br><br>
+                <p class='kyten'><b></b></p>
+            </form>
+            </div>
+         </div>";
+            html += @"</div></div>";
+            Response.Write(html);
+        }
+    }
 
 }

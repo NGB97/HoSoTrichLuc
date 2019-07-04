@@ -480,7 +480,7 @@ public static class StaticData
         { }
         return result;
     }
-
+    
     public static string getField1(string table, string getField, string paraField, string valueParaField)
     {
         string result = "";

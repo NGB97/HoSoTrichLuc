@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,6 +12,62 @@ public partial class DKKhaiSinh : System.Web.UI.Page
     string sID = "";
     protected void Page_Load(object sender, EventArgs e)
     {
+        
+        if (!IsPostBack)
+        {
+            txtTTT_QuocGia_QQ.Value = "Việt Nam";
+            txtTTT_QuocGia.Value = "Việt Nam";
+            txtNYC_QuocGia.Value = "Việt Nam";
+            //LoadNoiCapNYC_CMND();
+            //LoadNoiCapTTM_CMND();
+            //LoadNoiCapTTC_CMND();
+        }
+
+    }
+    //private void LoadNoiCapNYC_CMND()
+    //{
+    //    txtNYC_NoiCap.DataSource = Connect.GetTable("select * from tb_TinhTP Order By Ten Asc");
+    //    txtNYC_NoiCap.DataTextField = "Ten";
+    //    txtNYC_NoiCap.DataValueField = "Ten"; 
+    //    txtNYC_NoiCap.DataBind();
+    //}
+    //private void LoadNoiCapTTM_CMND()
+    //{
+    //    txtTTM_NoiCap.DataSource = Connect.GetTable("select * from tb_TinhTP Order By Ten Asc");
+    //    txtTTM_NoiCap.DataTextField = "Ten";
+    //    txtTTM_NoiCap.DataValueField = "Ten";
+    //    txtTTM_NoiCap.DataBind();
+    //}
+    //private void LoadNoiCapTTC_CMND()
+    //{
+    //    txtTTC_NoiCap.DataSource = Connect.GetTable("select * from tb_TinhTP Order By Ten Asc");
+    //    txtTTC_NoiCap.DataTextField = "Ten";
+    //    txtTTC_NoiCap.DataValueField = "Ten";
+    //    txtTTC_NoiCap.DataBind();
+    //}
+   
+    protected void btExcel_Click(object sender, EventArgs e)
+   {
+        string sql = "";
+        sql += @"select * from tb_DetailB ORDER BY NgayDangKy DESC";
+        DataTable table = Connect.GetTable(sql);
+        ClosedXML.Excel.XLWorkbook wbook = new ClosedXML.Excel.XLWorkbook();
+        wbook.Worksheets.Add(table, "tab1");
+        // Prepare the response
+        HttpResponse httpResponse = Response;
+        httpResponse.Clear();
+        httpResponse.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+        //Provide you file name here
+        httpResponse.AddHeader("content-disposition", "attachment;filename=\"DanhSachDangKyKhaiSinh(" + DateTime.Now.ToString("dd_MM_yyyy_HH_mm_ss") + ").xlsx\"");
+        // Flush the workbook to the Response.OutputStream
+        using (MemoryStream memoryStream = new MemoryStream())
+        {
+            wbook.SaveAs(memoryStream);
+            memoryStream.WriteTo(httpResponse.OutputStream);
+            memoryStream.Close();
+        }
+
+        httpResponse.End();
     }
 
     protected void btLuu_Click(object sender, EventArgs e)
