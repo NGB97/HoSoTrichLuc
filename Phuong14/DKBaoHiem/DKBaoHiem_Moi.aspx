@@ -10,7 +10,13 @@
     <script src="../Content/cssdatepicker/moment.min.js"></script>
     <link href="../Content/cssdatepicker/pikaday.css" rel="stylesheet" />
     <script src="../Content/cssdatepicker/pikaday.js"></script>
-
+    <script>
+        window.onload = function () {
+            LoadTinh_NYC();
+            LoadTinh_NCT();
+            pikadayBH();
+        }
+    </script>
     <div class="check_qh margin_top" id="Div1" runat="server">
         <h3 class="dk">hệ thống đăng ký bảo hiểm</h3>
     </div>
@@ -45,7 +51,10 @@
                         <label for="">Giới tính <span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control " data-val="true" data-val-required="" id="txtNYC_GioiTinh" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <select class="form-control " data-val="true" data-val-required="" id="txtNYC_GioiTinh" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus>
+                            <option value="Nam"></option>
+                            <option value="Nữ"></option>
+                        </select>
                     </div>
                 </div>
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -53,7 +62,7 @@
                         <label for="">Dân tộc <span></span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtNYC_DanToc" runat="server" name="Content.ContentName" value="" placeholder="abc@gmail.com" type="text" required autofocus />
+                        <input class="form-control" data-val="true" data-val-required="" id="txtNYC_DanToc" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
                     </div>
                 </div>
             </div>
@@ -106,45 +115,6 @@
                 </div>
             </div>
             <br>
-            <%-- <br>
-            <div class="row">
-                <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
-                        <label for="">Loại giấy tờ<span>*</span></label>
-                    </div>
-                    <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtNYC_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="CMND/CCCD/HC" type="text" required autofocus />
-                    </div>
-                </div>
-                <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left">
-                        <label for="">Số giấy tờ <span>*</span></label>
-                    </div>
-                    <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtNYC_SoGT" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
-                        <label for="">Ngày cấp <span>*</span></label>
-                    </div>
-                    <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtNYC_NgayCap" runat="server" name="Content.ContentName" value="" placeholder="ngày / tháng / năm" type="text" required autofocus />
-                    </div>
-                </div>
-                <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left">
-                        <label for="">Nơi cấp <span>*</span></label>
-                    </div>
-                    <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtNYC_NoiCap" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
-                    </div>
-                </div>
-            </div>
-            <br>--%>
             <div class="">
                 <h6>Nơi cư trú</h6>
             </div>
@@ -195,7 +165,7 @@
                         <label for="">Họ tên cha/ mẹ/ người giám hộ<span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtNYC_QuanHe" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input class="form-control" data-val="true" data-val-required="" id="txtNYC_NGH" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
                         <i style="color: red;">(Đối với trẻ em dưới 6 tuổi)</i>
                     </div>
                 </div>
@@ -230,12 +200,12 @@
                         <label for="">Giấy tờ tùy thân<span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9 ">
-                        <input class="form-control  left" data-val="true" data-val-required="" id="txtNYC_GTTT" runat='server' name="Content.ContentName" value="" placeholder="" type="text" required />
+                        <input class="form-control  left" data-val="true" data-val-required="" id="txtNYC_GTTT" runat='server' name="Content.ContentName" value="" placeholder="CMND/CCCD/HC" type="text" required />
                     </div>
                 </div>
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left">
-                        <label for="">Số<span>*</span></label>
+                        <label for="" style="float:right;padding-right:26px">Số<span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
                         <input class="form-control" data-val="true" data-val-required="" id="txtNYC_SoGTTT" name="Content.ContentName" type="text" value="" placeholder="" runat="server" />
@@ -292,5 +262,10 @@
             </div>
             <br>
         </div>
+    </div>
+    <br />
+    <div class="col-lg-offset-9 col-lg-3 col-md-offset-9 col-md-3 col-sm-offset-9 col-sm-3 col-xs-offset-9 col-xs-3">
+        <asp:LinkButton ID="btLuu" type="button" class="btn" OnClick="btLuu_Click" runat="server">Gửi thông tin</asp:LinkButton>
+<%--        <button href="#" type="button" class="btn" onclick="PrinfKhaiSinh1()" runat="server">In Đơn</button>--%>
     </div>
 </asp:Content>

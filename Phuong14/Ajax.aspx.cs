@@ -23,12 +23,14 @@ public partial class Ajax : System.Web.UI.Page
                     PrinfKhaiSinh(); break;
                 case "PrinfKhaiTu":
                     PrinfKhaiTu(); break;
-
+                case "PrinfBaoHiem":
+                    PrinfBaoHiem(); break;
+                case "PrinfPhuLuc":
+                    PrinfPhuLuc(); break;
             }
         }
         catch { }
     }
-
     private void PrinfKhaiSinh()
     {
         string sqlKhaiSinh = @"SELECT *
@@ -443,7 +445,7 @@ public partial class Ajax : System.Web.UI.Page
             }
             else if (data.Rows[0]["CH_HoTen"].ToString() != data.Rows[0]["TTC_HoTen"].ToString() && data.Rows[0]["CH_HoTen"].ToString() != data.Rows[0]["TTM_HoTen"].ToString())
             {
-              html += @"
+                html += @"
                 <tr>
 				    <td>3</td>
 				    <td>" + data.Rows[0]["TTM_HoTen"].ToString() + @"</td>
@@ -455,11 +457,11 @@ public partial class Ajax : System.Web.UI.Page
 				    <td>" + data.Rows[0]["TTM_SoGT"].ToString() + @"</td>
 				    <td></td>
 				</tr>";
-                   
+
             }
             else
             {
-              html += @"
+                html += @"
                 <tr>
 				    <td>3</td>
 				    <td>" + data.Rows[0]["TTC_HoTen"].ToString() + @"</td>
@@ -472,10 +474,10 @@ public partial class Ajax : System.Web.UI.Page
 				    <td></td>
 				</tr>";
             }
-            
-			html +=@"</table><br>";
 
-            html +=@"
+            html += @"</table><br>";
+
+            html += @"
         <p class='text-center'>(Ghi chú: Người kê khai có thể tra cứu Mã số BHXH và Mã hộ gia đình tại địa chỉ: http://baohiemxahoi.gov.vn)</p>
         <div class='flex justify-content-between'>
             <div class='item'>
@@ -639,7 +641,7 @@ public partial class Ajax : System.Web.UI.Page
 			        </p>		
 		        </div>";
             }
-        
+
             html += @"
 		<div>
 			<p class='tieude'>II/ Bên được ủy quyền:</p>
@@ -663,7 +665,7 @@ public partial class Ajax : System.Web.UI.Page
 			</p>
         </div>
 		</div>";
-            
+
 
             html += @"
         <div>
@@ -678,7 +680,7 @@ public partial class Ajax : System.Web.UI.Page
 
 		</div>";
 
-            html +=@"
+            html += @"
 		<div>
 			<p class='tieude'>IV/Cam kết:</p>	
 			<p>
@@ -774,7 +776,7 @@ public partial class Ajax : System.Web.UI.Page
             <p class='tieude'>2.Giấy tờ phải xuất trình</p>
             <p>a. Giấy tờ tùy thân của người đi đăng ký khai sinh</p>
             <p>b.Giấy tờ chứng minh nơi cư trú</p>
-            <p>c.Thời gian nhận hồ sơ: "+DateTime.Now.Hour.ToString()+ @" giờ, "+ DateTime.Now.Minute.ToString()+ @" phút, ngày " + DateTime.Now.Day.ToString() + @", tháng " + DateTime.Now.Month.ToString() + @", năm " + DateTime.Now.Year.ToString() + @"</p>
+            <p>c.Thời gian nhận hồ sơ: " + DateTime.Now.Hour.ToString() + @" giờ, " + DateTime.Now.Minute.ToString() + @" phút, ngày " + DateTime.Now.Day.ToString() + @", tháng " + DateTime.Now.Month.ToString() + @", năm " + DateTime.Now.Year.ToString() + @"</p>
             <p>d.Thời gian trả kết quả: ngày " + ngayhen + @", tháng " + DateTime.Now.Month.ToString() + @", năm " + DateTime.Now.Year.ToString() + @"</p>
             <p>Đăng kí nhận kết quả tại Bộ phận hộ tịch</p>
             <div class='flex justify-content-between'>
@@ -1168,91 +1170,59 @@ public partial class Ajax : System.Web.UI.Page
                 <div class='text-center'>
                     <h4 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h4>
                     <h4 class='sub-title line-title'> Độc lập - Tự do - Hạnh phúc </h4>
-                    <h4 class='title'>TỜ KHAI ĐĂNG KÝ KHAI SINH</h4>
+                    <h4 class='title'>TỜ KHAI ĐĂNG KÝ KHAI TỬ</h4>
                 </div>
                 <p class='text-center'>Kính gửi: UBND phường 14, quận Gò Vấp, thành phố Hồ Chí Minh</p>
-                <div>
-                    <p>Họ, chữ đệm, tên người yêu cầu:
-                        <span class='ten'><span>
-                    </p>
-                    <p>CMND/CCCD số:
-                        <span class='gt'></span>
-                    </p>
-                    <p>Ngày cấp:
-                        <span class='gt'></span>
-                        <span class='ttgiua'>Nơi cấp:
-                            <span class='gt'></span>
-                        </span>
+                <div class='margin-text'>
+                    <p class='tieude'>Họ, chữ đệm, tên người yêu cầu:
+                        <span class='ten'>" + data.Rows[0]["NYC_HoTen"].ToString() + @"<span>
                     </p>
                     <p>Nơi cư trú:
-                        <span class='gt'></span>
+                        <span class='gt'>" + data.Rows[0]["NYC_SoNhaDuong"].ToString() + @", " + data.Rows[0]["NYC_PhuongXa"].ToString() + @", " + data.Rows[0]["NYC_QuanHuyen"].ToString() + @", " + data.Rows[0]["NYC_TinhTP"].ToString() + @"</span>
                     </p>
-                    <p>Quan hệ với trẻ được làm khai sinh:
-                        <span class='gt'></span>
+                    <p>Giấy tờ tùy thân:
+                        <span class='gt'>" + data.Rows[0]["NYC_LoaiGT"].ToString() + @" số " + data.Rows[0]["NYC_SoGT"].ToString() + @" do Công an " + data.Rows[0]["NYC_NoiCap"].ToString() + @" cấp ngày " + DateTime.Parse(data.Rows[0]["NYC_NgayCap"].ToString()).ToString("dd/MM/yyyy") + @"</span>
+                    </p>
+                    <p>Quan hệ với người đã chết:
+                        <span class='gt'>" + data.Rows[0]["NYC_QuanHe"].ToString() + @"</span>
                     </p>
                     <p><b>Đề nghị cơ quan đăng ký khai sinh cho người dưới đây:</b></p>
                     <p class='tieude'>Họ, chữ đệm, tên:
-                        <span class=' gt ten'><span>
-                    </p>
-                    <p>Ngày,tháng,năm sinh:
-                        <span class='gt'></span>
-                    </p>
-                    <p>Bằng chữ:
-                        <span class='gt'></span>
-                    </p>
-                    <p>Nơi sinh:
-                        <span class='gt'></span>
+                        <span class='ten'>" + data.Rows[0]["NC_HoTen"].ToString() + @"<span>
                     </p>
                     <p>Giới tính:
-                        <span class='gt'></span>
-                        <span class='padd'>Dân tộc:
-                            <span class='gt'></span>
-                            <span class='padd'>Quốc tịch:
-                                <span class='gt'></span>
-                            </span>
+                        <span class='gt'>" + data.Rows[0]["NC_GioiTinh"].ToString() + @"</span>
+                    </p>
+                    <p>Ngày, tháng, năm sinh:
+                        <span class='gt'>" + DateTime.Parse(data.Rows[0]["NC_NgaySinh"].ToString()).ToString("dd/MM/yyyy") + @"</span>
+                    </p>
+                    <p>Dân tộc:
+                        <span class='gt'>" + data.Rows[0]["NC_DanToc"].ToString() + @"</span>
+                        <span class='padd1'>Quốc tịch:
+                            <span class='gt'>" + data.Rows[0]["NC_QuocTich"].ToString() + @"</span>
                         </span>
                     </p>
-                    <p>Quê quán:
-                        <span class='gt'></span>
+                    <p>Nơi cư trú cuối cùng:
+                        <span class='gt'>" + data.Rows[0]["NC_SoNhaDuong"].ToString() + @", " + data.Rows[0]["NC_PhuongXa"].ToString() + @", " + data.Rows[0]["NC_QuanHuyen"].ToString() + @", " + data.Rows[0]["NC_TinhTP"].ToString() + @"</span>
                     </p>
-                </div>
-                <div>
-                    <p class='tieude'>Họ, chữ đệm, tên người mẹ:
-                        <span class='ten'><span>
+                    <p>Giấy tờ tùy thân:
+                        <span class='gt'>" + data.Rows[0]["NC_GTTT"].ToString() + @" số " + data.Rows[0]["NC_SoGTTT"].ToString() + @" do Công an " + data.Rows[0]["NC_NoiCap"].ToString() + @" cấp ngày " + DateTime.Parse(data.Rows[0]["NC_NgayCap"].ToString()).ToString("dd/MM/yyyy") + @"</span>
                     </p>
-                    <p>Năm sinh:
-                        <span class='gt'></span>
-                        <span class='padd'>Dân tộc:
-                            <span class='gt'></span>
-                            <span class='padd'>Quốc tịch:
-                                <span class='gt'></span>
-                            </span>
-                        </span>
+                    <p>Đã chết vào lúc:
+                        <span class='gt'>" + DateTime.Parse(data.Rows[0]["NC_GioChet"].ToString()).ToString("HH") + @" giờ " + DateTime.Parse(data.Rows[0]["NC_GioChet"].ToString()).ToString("HH") + @" phút , ngày " + DateTime.Parse(data.Rows[0]["NC_NgayChet"].ToString()).ToString("dd") + @" tháng " + DateTime.Parse(data.Rows[0]["NC_NgayChet"].ToString()).ToString("MM") + @" năm " + DateTime.Parse(data.Rows[0]["NC_NgayChet"].ToString()).ToString("yyyy") + @"</span>
                     </p>
-                    <p>Quê quán:
-                        <span class='gt'></span>
+                    <p>Nơi chết:
+                        <span class='gt'>" + data.Rows[0]["NC_NoiChet"].ToString() + @"</span>
                     </p>
-                </div>
-                <div>
-                    <p class='tieude'>Họ, chữ đệm, tên người cha:
-                        <span class='ten'><span>
+                    <p>Nguyên nhân chết:
+                        <span class='gt'>" + data.Rows[0]["NC_NguyenNhanChet"].ToString() + @"</span>
                     </p>
-                    <p>Năm sinh:
-                        <span class='gt'></span>
-                        <span class='padd'>Dân tộc:
-                            <span class='gt'></span>
-                            <span class='padd'>Quốc tịch:
-                                <span class='gt'></span>
-                            </span>
-                        </span>
+                    <p>Số Giấy báo tử/ Giấy tờ thay thế Giấy báo tử:
+                        <span class='gt'>" + data.Rows[0]["NC_SoGBT"].ToString() + @" do " + data.Rows[0]["NC_Do"].ToString() + @" cấp ngày " + DateTime.Parse(data.Rows[0]["NC_NgayCapGBT"].ToString()).ToString("dd") + @" tháng " + DateTime.Parse(data.Rows[0]["NC_NgayCapGBT"].ToString()).ToString("MM") + @" năm " + DateTime.Parse(data.Rows[0]["NC_NgayCapGBT"].ToString()).ToString("yyyy") + @" </span>
                     </p>
-                    <p>Quê quán:
-                        <span class='gt'></span>
-                    </p>
-                </div>
-                <p class='camdoan'>Tôi cam đoan nội dung đề nghị đăng ký khai sinh trên đây là đúng sự thật, được sự thỏa thuận nhất trí của các bên liên quan theo quy định của pháp luật.</p>
-                <p>Tôi chịu hoàn toàn trách nhiệm trước pháp luật về nội dung cam đoan của mình.</p>
-                <p class='canphai'>Phường 14,ngày&nbsp;
+                </div>    
+                Tôi cam đoan những nội dung khai trên đây là đúng sự thật và chịu trách nhiệm trước pháp luật về cam đoan của mình.
+                <p class='canphai'>Phường 14, ngày&nbsp;
                     <span>" + DateTime.Now.Day.ToString() + @"&nbsp;
                         <span>tháng&nbsp;
                             <span>" + DateTime.Now.Month.ToString() + @"&nbsp;
@@ -1264,7 +1234,7 @@ public partial class Ajax : System.Web.UI.Page
                         </span>
                     </span>
                 </p>
-                <p class='kyten'><b> Người yêu cầu </b></p><br><br>
+                <p class='kyten'><b> Người yêu cầu </b></p>
                 <p class='kyten'><b></b></p>
             </form>
             </div>
@@ -1273,5 +1243,463 @@ public partial class Ajax : System.Web.UI.Page
             Response.Write(html);
         }
     }
+    private void PrinfBaoHiem()
+    {
+        int IDBaoHiem = 0;
+        int SoDon = 1;
+        try
+        {
+            IDBaoHiem = int.Parse(StaticData.ValidParameter(Request.QueryString["IDBaoHiem"].Trim()));
+        }
+        catch { }
+        try
+        {
+            SoDon = int.Parse(StaticData.ValidParameter(Request.QueryString["SoDon"].Trim()));
+        }
+        catch { }
 
+        string html = "";
+        string sqlBaoHiem = @"SELECT *
+                         FROM tb_BaoHiem
+                         WHERE IdMoi = "+ IDBaoHiem;
+        DataTable data = Connect.GetTable(sqlBaoHiem);
+        html += @"
+                    <div style='width:100%'>
+                    <div style='font-family: 'Times New Roman', Times, serif;font-size: 20px'>";
+        /*Form đăng kí Bảo hiểm*/
+        if (IDBaoHiem !=0)
+        {
+            if (data.Rows.Count > 0)
+            {
+                for (int i = 0; i< data.Rows.Count; i++)
+                {                 
+                    html += @"
+                   <div style='page-break-before:always'>
+                   <div class='formcus'>
+                   <div style='margin-bottom:-25px;margin-top:-18px;'>
+                   <div class='flex justify-content-between'>
+                    <div class='item'>
+                        <h4 class='line-title'></h4>
+                    </div>
+                    <div class='item text-center'>
+                        <h4 class='title size-small' style='margin-bottom:-3px;'>Mẫu TK1-TS</h4>
+                        <p class='sub-title size-small' style='margin-bottom:-14px;'>(Ban hành kèm theo QĐ số: 595/QĐ-BHXH</p>
+                        <p class='size-small canphai' style='padding-left:64px;'>ngày 14/4/2017 của BHXH Việt Nam)</p>
+                    </div>
+                    </div>
+                    </div>
+                    <div style='margin-bottom:-20px'>
+                        <div class='flex justify-content-between'>
+                            <div class='item'>
+                                <h4 class='line-title'>BẢO HIỂM XÃ HỘI VIỆT NAM</h4>
+                            </div>
+                            <div class='item text-center'>
+                                <h4 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h4>
+                                <h4 class='sub-title line-title' style='margin-top:-10px'> Độc lập - Tự do - Hạnh phúc</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 style='text-align:center;margin-bottom:0px;'>TỜ KHAI</h4>
+                    <h4 style='text-align:center;margin-bottom:0px;' class='title sub-title'>THAM GIA, ĐIỀU CHỈNH THÔNG TIN BẢO HIỂM XÃ HỘI, BẢO HIỂM Y TẾ</h4>
+                    <p class='text-center'>Kính gửi: UBND phường 14, quận Gò Vấp, thành phố Hồ Chí Minh</p>
+                    <p class='tieude'>I.Phần kê khai bắt buộc :
+                        <p>[01]. Họ và tên(viết chữ in hoa) :
+                            <span class='ten'>" + data.Rows[i]["NYC_HoTen"].ToString() + @"<span>
+                        </p>
+                        <p>[02]. Ngày, tháng, năm sinh:
+                            <span class='gt'>" + data.Rows[i]["NYC_NamSinh"].ToString() + @"</span>
+                            <span class='ttgiua'>[03]. Giới tính:
+                                <span class='gt'>" + data.Rows[i]["NYC_GioiTinh"].ToString() + @"</span>
+                            </span>
+                        </p>
+                        <p>[04]. Quốc tịch:
+                            <span class='gt'>" + data.Rows[i]["NYC_QuocTich"].ToString() + @"</span>
+                            <span class='ttgiua'>[05]. Dân tộc:
+                                <span class='gt'>" + data.Rows[i]["NYC_DanToc"].ToString() + @"</span>
+                            </span>
+                        </p>
+                        <p>[06]. Nơi đăng ký giấy khai sinh:
+                            <span> [06.1]. Xã (phường, thị trấn):
+                        	        <span class=''>" + data.Rows[i]["NYC_PhuongXa_NS"].ToString() + @"</span>
+                	        </span>
+                        </p>
+                	        <p>[06.2]. Huyện(quận, thị xã) :
+                                <span class=''>" + data.Rows[i]["NYC_QuanHuyen_NS"].ToString() + @"</span>
+                                <span style='padding-left:10px'>[06.3]. Tỉnh/Thành phố:
+                                    <span class=''>" + data.Rows[i]["NYC_TinhTP_NS"].ToString() + @"</span>
+                                </span>
+                            </p>
+                            <p>[07]. Địa chỉ nhận hồ sơ: 
+                                <span class='gt'>[07.1]. Số nhà, đường phố, thôn xóm:
+	                        	        <span class='gt'>" + data.Rows[i]["NYC_SoNhaDuong"].ToString() + @"</span>
+                                </span></p>
+                            <p>[07.2]. Xã(phường, thị trấn) :
+	                            <span class=''>" + data.Rows[i]["NYC_PhuongXa"].ToString() + @"</span>
+	                            <span style='padding-left:10px'>[07.3]. Huyện(quận, thị xã) :
+	                                <span class=''>" + data.Rows[i]["NYC_QuanHuyen"].ToString() + @"</span>
+                    	        </span>
+	                        </p>
+	                        <p>[07.4]. Tỉnh/Thành phố:
+	                            <span class='gt'>" + data.Rows[i]["NYC_TinhTP"].ToString() + @"</span>
+	                        </p>
+                            <p>[08]. Họ tên cha/ mẹ/ người giám hộ
+                                <span><i>(đối với trẻ em dưới 6 tuổi)</i></span>:
+                        	        <span class='ten'>" + data.Rows[i]["NYC_NGH"].ToString() + @"</span>
+                    	
+                            </p>
+                            <p class='tieude'>II.Phần kê khai chung :
+                                <p>[09]. Mã số BHXH(đã cấp) :
+                                    <span class='gt'>" + data.Rows[i]["NYC_BHXH"].ToString() + @"</span>
+                                    <span class=''>[09.1]. Số điện thoại liên hệ:
+                                        <span class='gt'>" + data.Rows[i]["NYC_SDT"].ToString() + @"</span>
+                                    </span>
+                                </p>
+                                <p>[09.2]. Số CMND/ Hộ chiếu/ Thẻ căn cước:
+                                    <span class='gt'>" + data.Rows[i]["NYC_SoGTTT"].ToString() + @"</span>
+                                </p>
+                                <p>[10]. Mã số hộ gia đình(đã cấp) :
+                                    <span class='gt'>" + data.Rows[i]["NYC_MaSoHGD"].ToString() + @"</span>
+                                </p>
+                                <p>[11]. Mức tiền đóng:
+                                    <span class='gt'></span>
+                                    <span class='gt'>[12]. Phương thức đóng:
+                                    </span>
+                                </p>
+                                <p>[13]. Nơi đăng ký khám chữa bệnh ban đầu:
+                                    <span class='gt'>" + data.Rows[i]["NYC_NoiKCB"].ToString() + @"</span>
+                                </p>
+                                <p>[14]. Nội dung thay đổi, yêu cầu:
+                                    <span class='gt'>" + data.Rows[i]["NYC_NoiDungYC"].ToString() + @"</span>
+                                </p>
+                                <p>[15]. Hồ sơ kèm theo(nếu có):
+                                    <span class='gt'>" + data.Rows[i]["NYC_HoSo"].ToString() + @"</span>
+                                </p>
+                                <div class='canphai'>
+                                <p style= 'margin-bottom:-13px;font-size:16px''> Tôi cam đoan những nội dung kê khai là đúng và chịu trách nhiệm</p>
+                                <p style = 'margin-bottom:-8px;padding-right: 65px;font-size:16px' > trước pháp luật về những nội dung đã kê khai</p>
+                                </div>
+                                <div style = 'padding-right: 85px;'>
+                                    <p class='canphai'>Phường 14, ngày&nbsp;
+                                        <span>" + DateTime.Now.Day.ToString() + @"&nbsp;
+                                            <span>tháng&nbsp;
+                                                <span>" + DateTime.Now.Month.ToString() + @"&nbsp;
+                                                    <span>năm&nbsp;
+                                                        <span>" + DateTime.Now.Year.ToString() + @"&nbsp;
+                                                        </span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </span>
+                                    </p>
+                                    <p class='kyten' style='margin-top:-5px'><b> Người kê khai</b></p>
+                                 </div>
+                            </div></div>
+                            ";
+                    html += @"</div></div>";
+                }
+            }
+        }
+        else
+        {
+            int idGiaHan = int.Parse(StaticData.getField("tb_PhuLucTVHGD", "isnull(max(IdGiaHan),0)", "1", "1"));
+            string sqlPhuLuc = @"SELECT *
+                         FROM tb_PhuLucTVHGD
+                         WHERE IdGiaHan = " + idGiaHan;
+            DataTable table = Connect.GetTable(sqlPhuLuc);
+            string sqlCH = @"SELECT *
+                         FROM tb_TVHGD
+                         WHERE IdGiaHan = " + idGiaHan;
+            DataTable tbTVHGD = Connect.GetTable(sqlCH);
+
+            for (int i = 0; i< SoDon; i++)
+            {
+                html += @"
+                <div style='page-break-before:always'>
+                <div style='margin-left: 50px;'>
+    			<h3 class='title text-center'>PHỤC LỤC: THÀNH VIÊN HỘ GIA ĐÌNH</h3>
+    			<div style='margin-left: 50px;'>
+                    <div style='margin-bottom:-8px;'>
+                    <p>Họ và tên chủ hộ:
+                    <span class='padd ten'>" + table.Rows[0]["CH_HoTen"].ToString() + @"</span>
+                        <span>Số diện thoại:
+                            <span class='gt'>" + table.Rows[0]["CH_SDT"].ToString() + @"</span>
+                        </span>
+                    </p>    	
+                    <p>Số hộ khẩu(hoặc sổ tạm trú):
+                    <span class='gt'>" + table.Rows[0]["CH_SoSHK"].ToString() + @"</span>
+                        <span>Địa chỉ:
+                        <span>Thôn (bản,tổ dân phố)
+                            <span class='gt'>" + table.Rows[0]["CH_SoDuong"].ToString() + @"</span>
+                        </span>
+                    </p></div>
+                    <div>
+                    <div class='flex justify-content-between'>
+                        <div class='item'>
+                            <p>Phường/Xã:
+                                <span class='gt'>" + table.Rows[0]["CH_PhuongXa"].ToString() + @"</span>
+                            </p>
+                        </div>
+                        <div class='item'>
+                            <p>Quận/Huyện:
+                                <span class='gt'>" + table.Rows[0]["CH_QuanHuyen"].ToString() + @"</span>
+                            </p>
+                        </div>
+                        <div class='item'>
+                            <p>Tỉnh/Thành phố:
+                                <span class='gt'>" + table.Rows[0]["CH_TinhTP"].ToString() + @"</span>
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <table style='width:100%'>
+    				<tr>
+    				    <th>STT</th>
+    				    <th>Họ Và Tên</th>
+    				    <th>Mã số BHXH</th>
+    				    <th>Ngày, tháng,năm sinh</th>
+    				    <th>Giới tính</th>
+    				    <th>Nơi cấp giấy khai sinh</th>
+    				    <th>Quan hệ với chủ hộ</th>
+    				    <th>Số CMND/CCCD/HC</th>
+    				    <th>Ghi chú</th>
+    				</tr>
+                    <tr>
+    				     <td>A</td>
+    				     <td>B</td>
+    				     <td>1</td>
+    				     <td>2</td>
+    				     <td>3</td>
+    				     <td>4</td>
+    				     <td>5</td>
+    				     <td>6</td>
+    				     <td>7</td>
+    				 </tr>";
+                int STT = 1;
+                for (int j = 0; j < tbTVHGD.Rows.Count; j++)
+                {
+                    html += @"
+    				    <tr>
+    				        <td>" + STT + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_HoTen"].ToString() + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_SoBHXH"].ToString() + @"</td>
+    				        <td>" + DateTime.Parse(tbTVHGD.Rows[j]["TV_NamSinh"].ToString()).ToString("dd/MM/yyyy") + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_GioiTinh"].ToString() + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_NoiCap"].ToString() + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_Quanhe"].ToString() + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_SoGTTT"].ToString() + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_GhiChu"].ToString() + @"</td>
+    				    </tr>";
+                    STT++;
+                }
+                for (int n = tbTVHGD.Rows.Count+1;n<=10;n++)
+                {
+                    html += @"
+                    <tr>
+    				     <td>"+n+@"</td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				 </tr>";
+                }
+               html += @"
+    			</table>
+                <p class='text-center'>(Ghi chú: Người kê khai có thể tra cứu Mã số BHXH và Mã hộ gia đình tại địa chỉ: http://baohiemxahoi.gov.vn)</p>
+        <div class='flex justify-content-between'>
+            <div class='item'>
+                <p class='item title text-center sub-title'></p>
+                <p class='title'></p>
+                <p class='text-center title sub-title'></p>
+            </div>
+            <div class='item'>
+                <p class='item title text-center sub-title'style='font-size:16px;margin-bottom:-10px;' >Tôi cam đoan những nội dung kê khai là đúng và chịu </p>
+                <p class='title' style='font-size:16px;'>trách nhiệm trước pháp luật về những nội dung đã kê khai.</p>
+                <p class='title sub-title text-center'>Phường 14, ngày&nbsp;
+                    <span>" + DateTime.Now.Day.ToString() + @"&nbsp;
+                        <span>tháng&nbsp;
+                            <span>" + DateTime.Now.Month.ToString() + @"&nbsp;
+                                <span>năm&nbsp;
+                                    <span>" + DateTime.Now.Year.ToString() + @"&nbsp;
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                </p>
+                <p class='kyten' style='font-size:18px'><b> Người kê khai </b></p>
+                <p class='Tenkyten'><b></b></p>
+            </div>
+        </div>
+  	    </div>
+        </div>";
+        }
+            html += @"</div></div>";
+        }
+        Response.Write(html);
+    }
+    private void PrinfPhuLuc()
+    {
+        int IDBaoHiem = 0;
+        try
+        {
+            IDBaoHiem = int.Parse(StaticData.ValidParameter(Request.QueryString["IDBaoHiem"].Trim()));
+        }
+        catch { }
+        string sqlBaoHiem = @"SELECT *
+                         FROM tb_BaoHiem
+                         WHERE IdMoi = " + IDBaoHiem;
+        DataTable data = Connect.GetTable(sqlBaoHiem);
+        string sqlPhuLuc = @"SELECT *
+                         FROM tb_PhuLucTVHGD
+                         WHERE IdMoi = " + IDBaoHiem;
+        DataTable table = Connect.GetTable(sqlPhuLuc);
+        string sqlCH = @"SELECT *
+                         FROM tb_TVHGD
+                         WHERE IdMoi = " + IDBaoHiem;
+        DataTable tbTVHGD = Connect.GetTable(sqlCH);
+        string html = "";
+        html += @"
+                    <div style='width:100%'>
+                    <div style='font-family: 'Times New Roman', Times, serif;font-size: 20px'>";
+        /*Form in Phụ lục*/
+        if(IDBaoHiem != 0)
+        {
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                html += @"
+                <div style='page-break-before:always'>
+                <div style='margin-left: 50px;'>
+    			<h3 class='title text-center'>PHỤC LỤC: THÀNH VIÊN HỘ GIA ĐÌNH</h3>
+    			<div style='margin-left: 50px;'>
+                    <div style='margin-bottom:-8px;'>
+                    <p>Họ và tên chủ hộ:
+                    <span class='padd ten'>" + table.Rows[0]["CH_HoTen"].ToString() + @"</span>
+                        <span>Số diện thoại:
+                            <span class='gt'>" + table.Rows[0]["CH_SDT"].ToString() + @"</span>
+                        </span>
+                    </p>    	
+                    <p>Số hộ khẩu(hoặc sổ tạm trú):
+                    <span class='gt'>" + table.Rows[0]["CH_SoSHK"].ToString() + @"</span>
+                        <span>Địa chỉ:
+                        <span>Thôn (bản,tổ dân phố)
+                            <span class='gt'>" + table.Rows[0]["CH_SoDuong"].ToString() + @"</span>
+                        </span>
+                    </p></div>
+                    <div>
+                    <div class='flex justify-content-between'>
+                        <div class='item'>
+                            <p>Phường/Xã:
+                                <span class='gt'>" + table.Rows[0]["CH_PhuongXa"].ToString() + @"</span>
+                            </p>
+                        </div>
+                        <div class='item'>
+                            <p>Quận/Huyện:
+                                <span class='gt'>" + table.Rows[0]["CH_QuanHuyen"].ToString() + @"</span>
+                            </p>
+                        </div>
+                        <div class='item'>
+                            <p>Tỉnh/Thành phố:
+                                <span class='gt'>" + table.Rows[0]["CH_TinhTP"].ToString() + @"</span>
+                            </p>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                    <table style='width:100%'>
+    				<tr>
+    				    <th>STT</th>
+    				    <th>Họ Và Tên</th>
+    				    <th>Mã số BHXH</th>
+    				    <th>Ngày, tháng,năm sinh</th>
+    				    <th>Giới tính</th>
+    				    <th>Nơi cấp giấy khai sinh</th>
+    				    <th>Quan hệ với chủ hộ</th>
+    				    <th>Số CMND/CCCD/HC</th>
+    				    <th>Ghi chú</th>
+    				</tr>
+                    <tr>
+    				     <td>A</td>
+    				     <td>B</td>
+    				     <td>1</td>
+    				     <td>2</td>
+    				     <td>3</td>
+    				     <td>4</td>
+    				     <td>5</td>
+    				     <td>6</td>
+    				     <td>7</td>
+    				 </tr>";
+                int STT = 1;
+                for (int j = 0; j < tbTVHGD.Rows.Count; j++)
+                {
+                    html += @"
+    				    <tr>
+    				        <td>" + STT + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_HoTen"].ToString() + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_SoBHXH"].ToString() + @"</td>
+    				        <td>" + DateTime.Parse(tbTVHGD.Rows[j]["TV_NamSinh"].ToString()).ToString("dd/MM/yyyy") + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_GioiTinh"].ToString() + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_NoiCap"].ToString() + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_Quanhe"].ToString() + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_SoGTTT"].ToString() + @"</td>
+    				        <td>" + tbTVHGD.Rows[j]["TV_GhiChu"].ToString() + @"</td>
+    				    </tr>";
+                    STT++;
+                }
+                for (int n = tbTVHGD.Rows.Count + 1; n <= 10; n++)
+                {
+                    html += @"
+                    <tr>
+    				     <td>" + n + @"</td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				     <td></td>
+    				 </tr>";
+                }
+                html += @"
+    			</table>
+                <p class='text-center'>(Ghi chú: Người kê khai có thể tra cứu Mã số BHXH và Mã hộ gia đình tại địa chỉ: http://baohiemxahoi.gov.vn)</p>
+        <div class='flex justify-content-between'>
+            <div class='item'>
+                <p class='item title text-center sub-title'></p>
+                <p class='title'></p>
+                <p class='text-center title sub-title'></p>
+            </div>
+            <div class='item'>
+                <p class='item title text-center sub-title'style='font-size:16px;margin-bottom:-10px;' >Tôi cam đoan những nội dung kê khai là đúng và chịu </p>
+                <p class='title' style='font-size:16px;'>trách nhiệm trước pháp luật về những nội dung đã kê khai.</p>
+                <p class='title sub-title text-center'>Phường 14, ngày&nbsp;
+                    <span>" + DateTime.Now.Day.ToString() + @"&nbsp;
+                        <span>tháng&nbsp;
+                            <span>" + DateTime.Now.Month.ToString() + @"&nbsp;
+                                <span>năm&nbsp;
+                                    <span>" + DateTime.Now.Year.ToString() + @"
+                                    </span>
+                                </span>
+                            </span>
+                        </span>
+                </p>
+                <p class='kyten' style='font-size:18px'><b> Người kê khai </b></p>
+                <p class='Tenkyten'><b></b></p>
+            </div>
+        </div>
+  	    </div>
+        </div>";
+        }
+        html += @"</div></div>";
+        }
+        else
+        {
+            Response.Write("<script>Lỗi</script>");
+        }
+        Response.Write(html);
+    }
 }

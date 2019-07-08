@@ -9,17 +9,24 @@ using System.Web.UI.WebControls;
 public partial class DKBaoHiem_DKBaoHiem : System.Web.UI.Page
 {
     string IdMoi = "";
+    string SoDon = "";
     protected void Page_Load(object sender, EventArgs e)
     {
         try
         {
-            IdMoi = StaticData.ValidParameter(Request.QueryString["ID"].Trim());
+            IdMoi = StaticData.ValidParameter(Request.QueryString["IDBaoHiem"].Trim());
         }
         catch { }
-        
+        try
+        {
+            SoDon = StaticData.ValidParameter(Request.QueryString["SoDon"].Trim());
+        }
+        catch { }
+
         if (!IsPostBack)
         {
-            
+            IDBaoHiem.Value = IdMoi;
+            txtSoDon.Value = SoDon;
         }
         
     }
@@ -125,8 +132,8 @@ public partial class DKBaoHiem_DKBaoHiem : System.Web.UI.Page
         else
         {
             //int idMoi = int.Parse(StaticData.getField("tb_PhuLucTVHGD", "isnull(max(IdMoi),0)+1", "1", "1"));
-            string sqlInsert = "insert into tb_PhuLucTVHGD([IdMoi], [IdGiaHan], [CH_HoTen], [CH_SDT], [CH_SoSHK], [CH_TinhTP], [CH_QuanHuyen], [CH_PhuongXa], [CH_SoDuong], [CH_NgayDangKy]";
-            sqlInsert += " values('" + IdMoi + "','',N'" + CH_HoTen + "','" + CH_SDT + "','" + CH_SoSHK + "',N'" + CH_TinhTP + "',N'" + CH_QuanHuyen + "',N'" + CH_PhuongXa + "',N'" + CH_SoDuong + "','" + NgayDangKy + "'";
+            string sqlInsert = "insert into tb_PhuLucTVHGD([IdMoi], [IdGiaHan], [CH_HoTen], [CH_SDT], [CH_SoSHK], [CH_TinhTP], [CH_QuanHuyen], [CH_PhuongXa], [CH_SoDuong], [CH_NgayDangKy])";
+            sqlInsert += " values('" + IdMoi + "','',N'" + CH_HoTen + "','" + CH_SDT + "','" + CH_SoSHK + "',N'" + CH_TinhTP + "',N'" + CH_QuanHuyen + "',N'" + CH_PhuongXa + "',N'" + CH_SoDuong + "','" + NgayDangKy + "')";
             bool ktInsert = Connect.Exec(sqlInsert);
             if (ktInsert)
             {
@@ -136,8 +143,8 @@ public partial class DKBaoHiem_DKBaoHiem : System.Web.UI.Page
                 {
                     for (int i = 0; i < RCcheck; i++)
                     {
-                        string sqlTVHGD = "insert into tb_TVHGD([IdMoi], [IdGiaHan], [TV_HoTen], [TV_SoBHXH], [TV_NamSinh], [TV_GioiTinh], [TV_NoiCap], [TV_QuanHe], [TV_SoGTTT], [TV_GhiChu]";
-                        sqlTVHGD += " values('" + IdMoi + "','',N'" + table.Rows[i]["TV_HoTen"].ToString().Trim() + "','" + table.Rows[i]["TV_SoBHXH"].ToString().Trim() + "','" + table.Rows[i]["TV_NamSinh"].ToString().Trim() + "',N'" + table.Rows[i]["TV_GioiTinh"].ToString().Trim() + "',N'" + table.Rows[i]["TV_NoiCap"].ToString().Trim() + "',N'" + table.Rows[i]["TV_QuanHe"].ToString().Trim() + "','" + table.Rows[i]["TV_SoGTTT"].ToString().Trim() + "',N'" + table.Rows[i]["TV_GhiChu"].ToString().Trim() + "'";
+                        string sqlTVHGD = "insert into tb_TVHGD([IdMoi], [IdGiaHan], [TV_HoTen], [TV_SoBHXH], [TV_NamSinh], [TV_GioiTinh], [TV_NoiCap], [TV_QuanHe], [TV_SoGTTT], [TV_GhiChu])";
+                        sqlTVHGD += " values('" + IdMoi + "','',N'" + table.Rows[i]["TV_HoTen"].ToString().Trim() + "','" + table.Rows[i]["TV_SoBHXH"].ToString().Trim() + "','" + table.Rows[i]["TV_NamSinh"].ToString().Trim() + "',N'" + table.Rows[i]["TV_GioiTinh"].ToString().Trim() + "',N'" + table.Rows[i]["TV_NoiCap"].ToString().Trim() + "',N'" + table.Rows[i]["TV_QuanHe"].ToString().Trim() + "','" + table.Rows[i]["TV_SoGTTT"].ToString().Trim() + "',N'" + table.Rows[i]["TV_GhiChu"].ToString().Trim() + "')";
                         Connect.Exec(sqlTVHGD);
                     }
                     DeletePhuLuc();

@@ -19,7 +19,11 @@
             Load_TTM_NoiCap();
             KTcheckNCT();
             KTCheck();
+            LoadTinh_TTM();
             pikaday();
+            Load_TTC_NoiCap();
+            LoadTinh_TTC();
+            LoadTinh_CH();
         }
 
     </script>
@@ -77,7 +81,7 @@
             <div class="row">
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
-                        <label for="">Loại giấy tờ<span>*</span></label>
+                        <label for="">Giấy tờ tùy thân<span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
                         <input class="form-control" data-val="true" data-val-required="" id="txtNYC_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="CMND/CCCD/HC" type="text" required autofocus />
@@ -524,7 +528,7 @@
             <div class="row">
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
-                        <label for="">Loại giấy tờ<span>*</span></label>
+                        <label for="">Giấy tờ tùy thân<span>*</span></label>
 
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
@@ -548,7 +552,7 @@
                         <label for="">Nơi cấp <span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <select class="form-control" data-val="true" data-val-required="" id="txtTTM_NoiCap" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input class="form-control" data-val="true" data-val-required="" id="txtTTM_NoiCap" runat="server" name="Content.ContentName" value="" placeholder="--Nhập--" type="text" required autofocus />
                     </div>
                 </div>
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -618,17 +622,6 @@
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <h6>Nơi cư trú</h6>
                 </div>
-                <%--<div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                        <div class="form-check">
-                            <div class="col-md-4 col-sm-4 col-xs-3">
-                                <label class="form-check-label" for="">Đã chết</label>
-                            </div>
-                            <div class="col-md-3 col-sm-3 col-xs-3">
-                                <input type="checkbox" class="form-check-input" id="checkDisable">
-                            </div>
-
-                        </div>
-                    </div>--%>
             </div>
             <br>
             <div class="row">
@@ -647,6 +640,7 @@
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
                         <input class="form-control" data-val="true" data-val-required="" id="txtTTM_TinhTP" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input id="idTTM_TinhTP" hidden="hidden" name="name" runat="server" value="" />
                     </div>
                 </div>
             </div>
@@ -657,16 +651,16 @@
                         <label for="">Quận/huyện<span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtTTM_QuanHuyen" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input class="form-control" data-val="true" data-val-required="" disabled id="txtTTM_QuanHuyen" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input hidden="hidden" id="idTTM_QuanHuyen" runat="server" name="name" value="" />
                     </div>
                 </div>
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3 mg_left">
                         <label for="">Phường/Xã<span>*</span></label>
-
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtTTM_PhuongXa" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input class="form-control" data-val="true" data-val-required="" disabled id="txtTTM_PhuongXa" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
                     </div>
                 </div>
 
@@ -711,7 +705,7 @@
             <div class="row">
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
-                        <label for="">Loại giấy tờ<span>*</span></label>
+                        <label for="">Giấy tờ tùy thân<span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
                         <input class="form-control" data-val="true" data-val-required="" id="txtTTC_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="CMND/CCCD/HC" type="text" required autofocus />
@@ -735,7 +729,7 @@
                         <label for="">Nơi cấp<span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <select class="form-control" data-val="true" data-val-required="" id="txtTTC_NoiCap" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input class="form-control" data-val="true" data-val-required="" id="txtTTC_NoiCap" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
 
                     </div>
                 </div>
@@ -823,6 +817,7 @@
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
                         <input class="form-control" data-val="true" data-val-required="" id="txtTTC_TinhTP" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input id="idTTC_TinhTP" hidden="hidden" name="name" value="" runat="server" />
                     </div>
                 </div>
             </div>
@@ -833,7 +828,8 @@
                         <label for="">Quận/huyện<span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtTTC_QuanHuyen" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input class="form-control" data-val="true" data-val-required="" disabled id="txtTTC_QuanHuyen" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input id="idTTC_QuanHuyen" hidden="hidden" name="name" value="" runat="server" />
                     </div>
                 </div>
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -842,7 +838,7 @@
 
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtTTC_PhuongXa" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input class="form-control" data-val="true" data-val-required="" disabled id="txtTTC_PhuongXa" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
                     </div>
                 </div>
 
@@ -931,7 +927,7 @@
             <div class="row">
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
-                        <label for="">Loại giấy tờ</label>
+                        <label for="">Giấy tờ tùy thân</label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
                         <input class="form-control" data-val="true" data-val-required="" id="txtCH_LoaiGT" runat="server" name="Content.ContentName" value="" placeholder="CMND/CCCD/HC" type="text" required autofocus />
@@ -953,7 +949,7 @@
             <div class="row">
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
-                        <label for="">Quan hệ của trẻ ĐKKS với chủ hộ :<span>*</span></label>
+                        <label for="">Quan hệ của trẻ với chủ hộ :<span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
                         <input class="form-control" data-val="true" data-val-required="" id="txtCH_QuanHe" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
@@ -990,6 +986,7 @@
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
                         <input class="form-control" data-val="true" data-val-required="" id="txtCH_TinhTP" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input id="idCH_TinhTP" runat="server" hidden="hidden" name="name" value="" />
                     </div>
                 </div>
             </div>
@@ -1000,7 +997,8 @@
                         <label for="">Quận/huyện<span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtCH_QuanHuyen" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input class="form-control" data-val="true" data-val-required="" disabled id="txtCH_QuanHuyen" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input id="idCH_QuanHuyen" hidden="hidden" runat="server" name="name" value="" />
                     </div>
                 </div>
                 <div class="row col-lg-6 col-md-6 col-sm-6 col-xs-6">
@@ -1008,7 +1006,7 @@
                         <label for="">Phường/Xã<span>*</span></label>
                     </div>
                     <div class="row col-lg-8 col-md-8 col-sm-8 col-xs-9">
-                        <input class="form-control" data-val="true" data-val-required="" id="txtCH_PhuongXa" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
+                        <input class="form-control" data-val="true" data-val-required="" disabled id="txtCH_PhuongXa" runat="server" name="Content.ContentName" value="" placeholder="" type="text" required autofocus />
                     </div>
                 </div>
             </div>

@@ -15,9 +15,12 @@
             LoadTinh_CH();
             LoadChiTietPhuLuc();
             pikaday();
+            load_btnPrint();
+            //checkClick();
         }
     </script>
-
+    <asp:HiddenField ID="IDBaoHiem" value="" runat="server" />
+    <asp:HiddenField ID="txtSoDon" runat="server" />
     <div class="check_qh margin_top" id="Div1" runat="server">
         <h3 class="dk">hệ thống đăng ký bảo hiểm</h3>
     </div>
@@ -202,11 +205,17 @@
                 <div id="ChiTietTVHGD">
                 </div>
             </div>
+                <br />
         </div>
     </div>
     <br />
-    <div class="col-lg-offset-9 col-lg-3 col-md-offset-9 col-md-3 col-sm-offset-9 col-sm-3 col-xs-offset-9 col-xs-3">
-        <asp:LinkButton ID="btLuu" type="button" class="btn" OnClick="btLuu_Click" runat="server">Gửi thông tin</asp:LinkButton>
-        <button href="#" type="button" class="btn" onclick="PrinfKhaiSinh1()" runat="server">In Đơn</button>
+    <div class="col-lg-12">
+       <div class="col-lg-4"></div>
+       <div class="col-lg-4"></div>
+       <div class="col-lg-4">
+            <asp:LinkButton ID="btLuu" type="button" class="btn" OnClick="btLuu_Click" runat="server">Gửi thông tin</asp:LinkButton>
+            <button href="#" id="btnPrint" type="button" class="btn" onclick="PrinfBaoHiem()" runat="server">In Đơn</button>
+            <button href="#" id="btnPrint_PhuLuc" type="button" class="btn" onclick="PrinfPhuLuc()" runat="server">In Phụ Lục</button>
+        </div>
     </div>
 </asp:Content>

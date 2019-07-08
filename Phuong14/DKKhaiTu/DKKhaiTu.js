@@ -426,34 +426,6 @@ function LoadPhuongXa_NC() {
         xmlhttp.send();
     }
 }
-function PrinfKhaiTu() {
-    var xmlhttp;
-    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
-    }
-    else {// code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            if (xmlhttp.responseText != "") {
-                var print = window.open('', '_blank');
-                var shtml = "<html>";
-                shtml += "<head>";
-                shtml += "<link rel='stylesheet' type='text/css' media='print' href ='../Content/css/dk_khaisinh.css'>";
-                shtml += "</head>";
-                shtml += "<body onload=\"window.print(); window.close();\">";
-                shtml += xmlhttp.responseText;
-                shtml += "</body>";
-                shtml += "</html>";
-                print.document.write(shtml);
-                print.document.close();
-            }
-        }
-    }
-    xmlhttp.open("GET", "../Ajax.aspx?Action=PrinfKhaiTu", true);
-    xmlhttp.send();
-}
 function pikaday() {
     var picker = new Pikaday(
         {
@@ -511,7 +483,34 @@ function pikaday() {
 
     });
 }
-
+function PrinfKhaiTu() {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {// code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            if (xmlhttp.responseText != "") {
+                var print = window.open('', '_blank');
+                var shtml = "<html>";
+                shtml += "<head>";
+                shtml += "<link rel='stylesheet' type='text/css' media='print' href ='../Content/css/dk_khaitu.css'>";
+                shtml += "</head>";
+                shtml += "<body onload=\"window.print(); window.close();\">";
+                shtml += xmlhttp.responseText;
+                shtml += "</body>";
+                shtml += "</html>";
+                print.document.write(shtml);
+                print.document.close();
+            }
+        }
+    }
+    xmlhttp.open("GET", "../Ajax.aspx?Action=PrinfKhaiTu", true);
+    xmlhttp.send();
+}
 
 
 

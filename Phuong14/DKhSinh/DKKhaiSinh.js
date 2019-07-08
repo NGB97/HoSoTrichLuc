@@ -461,6 +461,7 @@ function LoadPhuongXa_TTT_QQ() {
         xmlhttp.send();
     }
 }
+
 function LoadTinh_TTT() {
     var TTT_QG = $('#ContentPlaceHolder1_txtTTT_QuocGia').val();
     if (TTT_QG != "" && TTT_QG == "Việt Nam") {
@@ -629,6 +630,7 @@ function LoadPhuongXa_TTT() {
         xmlhttp.send();
     }
 }
+
 function pikaday() {
     var picker = new Pikaday(
         {
@@ -730,4 +732,541 @@ function PrinfKhaiSinh1() {
     }
     xmlhttp.open("GET", "../Ajax.aspx?Action=PrinfKhaiSinh", true);
     xmlhttp.send();
+}
+
+function LoadTinh_TTM() {
+    var TTM_QG = $('#ContentPlaceHolder1_txtTTM_QuocGia').val();
+    if (TTM_QG != "" && TTM_QG == "Việt Nam") {
+        document.getElementById('ContentPlaceHolder1_txtNYC_TinhTP').disabled = false;
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                if (xmlhttp.responseText != "") {
+                    //alert(xmlhttp.responseText);
+                    var txt = xmlhttp.responseText
+                        .replace(/[\"]/g, '\\"')
+                        .replace(/[\\]/g, '\\\\')
+                        .replace(/[\/]/g, '\\/')
+                        .replace(/[\b]/g, '\\b')
+                        .replace(/[\f]/g, '\\f')
+                        .replace(/[\n]/g, '\\n')
+                        .replace(/[\r]/g, '\\r')
+                        .replace(/[\t]/g, '\\t');
+
+                    var listGioAutocomplete = eval("(" + xmlhttp.responseText + ")");
+                    $("#ContentPlaceHolder1_txtTTM_TinhTP").autocomplete({
+
+                        minLength: 0,
+                        source: listGioAutocomplete,
+                        focus: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTM_TinhTP").val(ui.item.label);
+                            return false;
+                        },
+                        select: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTM_TinhTP").val(ui.item.value);
+                            $("#ContentPlaceHolder1_idTTM_TinhTP").val(ui.item.id);
+                            document.getElementById('ContentPlaceHolder1_txtTTM_QuanHuyen').disabled = false;
+                            LoadQuanHuyen_TTM();
+                            return false;
+                        }
+                    }).focus(function () {
+                        $(this).autocomplete("search", "");
+                    });
+                }
+                else {
+
+                    alert("Lỗi get Giờ!")
+                }
+
+            }
+        }
+        xmlhttp.open("GET", "Ajax_DKKS.aspx?Action=LoadTinh&QuocGia=" + TTM_QG + "", true);
+        xmlhttp.send();
+    }
+}
+function LoadQuanHuyen_TTM() {
+    var TTM_TinhTP = $('#ContentPlaceHolder1_idTTM_TinhTP').val();
+    if (TTM_TinhTP != "" && TTM_TinhTP != "0") {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                if (xmlhttp.responseText != "") {
+                    //alert(xmlhttp.responseText);
+                    var txt = xmlhttp.responseText
+                        .replace(/[\"]/g, '\\"')
+                        .replace(/[\\]/g, '\\\\')
+                        .replace(/[\/]/g, '\\/')
+                        .replace(/[\b]/g, '\\b')
+                        .replace(/[\f]/g, '\\f')
+                        .replace(/[\n]/g, '\\n')
+                        .replace(/[\r]/g, '\\r')
+                        .replace(/[\t]/g, '\\t');
+
+                    var listGioAutocomplete = eval("(" + xmlhttp.responseText + ")");
+                    $("#ContentPlaceHolder1_txtTTM_QuanHuyen").autocomplete({
+
+                        minLength: 0,
+                        source: listGioAutocomplete,
+                        focus: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTM_QuanHuyen").val(ui.item.label);
+                            return false;
+                        },
+                        select: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTM_QuanHuyen").val(ui.item.value);
+                            $("#ContentPlaceHolder1_idTTM_QuanHuyen").val(ui.item.id);
+                            document.getElementById('ContentPlaceHolder1_txtTTM_PhuongXa').disabled = false;
+                            LoadPhuongXa_TTM();
+                            return false;
+                        }
+                    }).focus(function () {
+                        $(this).autocomplete("search", "");
+                    });
+                }
+                else {
+                    alert("Lỗi không tìm thấy danh sách quận huyện!")
+                }
+
+            }
+        }
+        xmlhttp.open("GET", "Ajax_DKKS.aspx?Action=LoadQuanHuyen&Tinh=" + TTM_TinhTP + "", true);
+        xmlhttp.send();
+    }
+}
+function LoadPhuongXa_TTM() {
+    var TTM_QuanHuyen = $('#ContentPlaceHolder1_idTTM_QuanHuyen').val();
+    if (TTM_QuanHuyen != "" && TTM_QuanHuyen != "0") {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                if (xmlhttp.responseText != "") {
+                    //alert(xmlhttp.responseText);
+                    var txt = xmlhttp.responseText
+                        .replace(/[\"]/g, '\\"')
+                        .replace(/[\\]/g, '\\\\')
+                        .replace(/[\/]/g, '\\/')
+                        .replace(/[\b]/g, '\\b')
+                        .replace(/[\f]/g, '\\f')
+                        .replace(/[\n]/g, '\\n')
+                        .replace(/[\r]/g, '\\r')
+                        .replace(/[\t]/g, '\\t');
+
+                    var listGioAutocomplete = eval("(" + xmlhttp.responseText + ")");
+                    $("#ContentPlaceHolder1_txtTTM_PhuongXa").autocomplete({
+
+                        minLength: 0,
+                        source: listGioAutocomplete,
+                        focus: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTM_PhuongXa").val(ui.item.label);
+                            return false;
+                        },
+                        select: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTM_PhuongXa").val(ui.item.value);
+
+                            return false;
+                        }
+                    }).focus(function () {
+                        $(this).autocomplete("search", "");
+                    });
+                }
+                else {
+                    alert("Lỗi không tìm thấy danh sách Phường xã!")
+                }
+
+            }
+        }
+        xmlhttp.open("GET", "Ajax_DKKS.aspx?Action=LoadPhuongXa&QuanHuyen=" + TTM_QuanHuyen + "", true);
+        xmlhttp.send();
+    }
+}
+
+function LoadTinh_TTC() {
+    var TTC_QG = $('#ContentPlaceHolder1_txtTTC_QuocGia').val();
+    if (TTC_QG != "" && TTC_QG == "Việt Nam") {
+        document.getElementById('ContentPlaceHolder1_txtTTC_TinhTP').disabled = false;
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                if (xmlhttp.responseText != "") {
+                    //alert(xmlhttp.responseText);
+                    var txt = xmlhttp.responseText
+                        .replace(/[\"]/g, '\\"')
+                        .replace(/[\\]/g, '\\\\')
+                        .replace(/[\/]/g, '\\/')
+                        .replace(/[\b]/g, '\\b')
+                        .replace(/[\f]/g, '\\f')
+                        .replace(/[\n]/g, '\\n')
+                        .replace(/[\r]/g, '\\r')
+                        .replace(/[\t]/g, '\\t');
+
+                    var listGioAutocomplete = eval("(" + xmlhttp.responseText + ")");
+                    $("#ContentPlaceHolder1_txtTTC_TinhTP").autocomplete({
+
+                        minLength: 0,
+                        source: listGioAutocomplete,
+                        focus: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTC_TinhTP").val(ui.item.label);
+                            return false;
+                        },
+                        select: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTC_TinhTP").val(ui.item.value);
+                            $("#ContentPlaceHolder1_idTTC_TinhTP").val(ui.item.id);
+                            document.getElementById('ContentPlaceHolder1_txtTTC_QuanHuyen').disabled = false;
+                            LoadQuanHuyen_TTC();
+                            return false;
+                        }
+                    }).focus(function () {
+                        $(this).autocomplete("search", "");
+                    });
+                }
+                else {
+
+                    alert("Lỗi get Giờ!")
+                }
+
+            }
+        }
+        xmlhttp.open("GET", "Ajax_DKKS.aspx?Action=LoadTinh&QuocGia=" + TTC_QG + "", true);
+        xmlhttp.send();
+    }
+}
+function LoadQuanHuyen_TTC() {
+    var TTC_TinhTP = $('#ContentPlaceHolder1_idTTC_TinhTP').val();
+    if (TTC_TinhTP != "" && TTC_TinhTP != "0") {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                if (xmlhttp.responseText != "") {
+                    //alert(xmlhttp.responseText);
+                    var txt = xmlhttp.responseText
+                        .replace(/[\"]/g, '\\"')
+                        .replace(/[\\]/g, '\\\\')
+                        .replace(/[\/]/g, '\\/')
+                        .replace(/[\b]/g, '\\b')
+                        .replace(/[\f]/g, '\\f')
+                        .replace(/[\n]/g, '\\n')
+                        .replace(/[\r]/g, '\\r')
+                        .replace(/[\t]/g, '\\t');
+
+                    var listGioAutocomplete = eval("(" + xmlhttp.responseText + ")");
+                    $("#ContentPlaceHolder1_txtTTC_QuanHuyen").autocomplete({
+
+                        minLength: 0,
+                        source: listGioAutocomplete,
+                        focus: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTC_QuanHuyen").val(ui.item.label);
+                            return false;
+                        },
+                        select: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTC_QuanHuyen").val(ui.item.value);
+                            $("#ContentPlaceHolder1_idTTC_QuanHuyen").val(ui.item.id);
+                            document.getElementById('ContentPlaceHolder1_txtTTC_PhuongXa').disabled = false;
+                            LoadPhuongXa_TTC();
+                            return false;
+                        }
+                    }).focus(function () {
+                        $(this).autocomplete("search", "");
+                    });
+                }
+                else {
+                    alert("Lỗi không tìm thấy danh sách quận huyện!")
+                }
+
+            }
+        }
+        xmlhttp.open("GET", "Ajax_DKKS.aspx?Action=LoadQuanHuyen&Tinh=" + TTC_TinhTP + "", true);
+        xmlhttp.send();
+    }
+}
+function LoadPhuongXa_TTC() {
+    var TTC_QuanHuyen = $('#ContentPlaceHolder1_idTTC_QuanHuyen').val();
+    if (TTC_QuanHuyen != "" && TTC_QuanHuyen != "0") {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                if (xmlhttp.responseText != "") {
+                    //alert(xmlhttp.responseText);
+                    var txt = xmlhttp.responseText
+                        .replace(/[\"]/g, '\\"')
+                        .replace(/[\\]/g, '\\\\')
+                        .replace(/[\/]/g, '\\/')
+                        .replace(/[\b]/g, '\\b')
+                        .replace(/[\f]/g, '\\f')
+                        .replace(/[\n]/g, '\\n')
+                        .replace(/[\r]/g, '\\r')
+                        .replace(/[\t]/g, '\\t');
+
+                    var listGioAutocomplete = eval("(" + xmlhttp.responseText + ")");
+                    $("#ContentPlaceHolder1_txtTTC_PhuongXa").autocomplete({
+
+                        minLength: 0,
+                        source: listGioAutocomplete,
+                        focus: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTC_PhuongXa").val(ui.item.label);
+                            return false;
+                        },
+                        select: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtTTC_PhuongXa").val(ui.item.value);
+
+                            return false;
+                        }
+                    }).focus(function () {
+                        $(this).autocomplete("search", "");
+                    });
+                }
+                else {
+                    alert("Lỗi không tìm thấy danh sách Phường xã!")
+                }
+
+            }
+        }
+        xmlhttp.open("GET", "Ajax_DKKS.aspx?Action=LoadPhuongXa&QuanHuyen=" + TTC_QuanHuyen + "", true);
+        xmlhttp.send();
+    }
+}
+function Load_TTC_NoiCap() {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    }
+    else {// code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            if (xmlhttp.responseText != "") {
+                //alert(xmlhttp.responseText);
+                var txt = xmlhttp.responseText
+                    .replace(/[\"]/g, '\\"')
+                    .replace(/[\\]/g, '\\\\')
+                    .replace(/[\/]/g, '\\/')
+                    .replace(/[\b]/g, '\\b')
+                    .replace(/[\f]/g, '\\f')
+                    .replace(/[\n]/g, '\\n')
+                    .replace(/[\r]/g, '\\r')
+                    .replace(/[\t]/g, '\\t');
+
+                var listGioAutocomplete = eval("(" + xmlhttp.responseText + ")");
+                $("#ContentPlaceHolder1_txtTTC_NoiCap").autocomplete({
+
+                    minLength: 0,
+                    source: listGioAutocomplete,
+                    focus: function (event, ui) {
+                        $("#ContentPlaceHolder1_txtTTC_NoiCap").val(ui.item.label);
+                        return false;
+                    },
+                    select: function (event, ui) {
+                        $("#ContentPlaceHolder1_txtTTC_NoiCap").val(ui.item.value);
+                        return false;
+                    }
+                }).focus(function () {
+                    $(this).autocomplete("search", "");
+                });
+            }
+            else {
+                alert("Lỗi không có danh sách Tỉnh!")
+            }
+
+        }
+    }
+    xmlhttp.open("GET", "Ajax_DKKS.aspx?Action=Load_NoiCap", true);
+    xmlhttp.send();
+}
+
+function LoadTinh_CH() {
+    var CH_QG = $('#ContentPlaceHolder1_txtCH_QuocGia').val();
+    if (CH_QG != "" && CH_QG == "Việt Nam") {
+        document.getElementById('ContentPlaceHolder1_txtCH_TinhTP').disabled = false;
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                if (xmlhttp.responseText != "") {
+                    //alert(xmlhttp.responseText);
+                    var txt = xmlhttp.responseText
+                        .replace(/[\"]/g, '\\"')
+                        .replace(/[\\]/g, '\\\\')
+                        .replace(/[\/]/g, '\\/')
+                        .replace(/[\b]/g, '\\b')
+                        .replace(/[\f]/g, '\\f')
+                        .replace(/[\n]/g, '\\n')
+                        .replace(/[\r]/g, '\\r')
+                        .replace(/[\t]/g, '\\t');
+
+                    var listGioAutocomplete = eval("(" + xmlhttp.responseText + ")");
+                    $("#ContentPlaceHolder1_txtCH_TinhTP").autocomplete({
+
+                        minLength: 0,
+                        source: listGioAutocomplete,
+                        focus: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtCH_TinhTP").val(ui.item.label);
+                            return false;
+                        },
+                        select: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtCH_TinhTP").val(ui.item.value);
+                            $("#ContentPlaceHolder1_idCH_TinhTP").val(ui.item.id);
+                            document.getElementById('ContentPlaceHolder1_txtCH_QuanHuyen').disabled = false;
+                            LoadQuanHuyen_CH();
+                            return false;
+                        }
+                    }).focus(function () {
+                        $(this).autocomplete("search", "");
+                    });
+                }
+                else {
+
+                    alert("Lỗi get Giờ!")
+                }
+
+            }
+        }
+        xmlhttp.open("GET", "Ajax_DKKS.aspx?Action=LoadTinh&QuocGia=" + CH_QG + "", true);
+        xmlhttp.send();
+    }
+}
+function LoadQuanHuyen_CH() {
+    var CH_TinhTP = $('#ContentPlaceHolder1_idCH_TinhTP').val();
+    if (CH_TinhTP != "" && CH_TinhTP != "0") {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                if (xmlhttp.responseText != "") {
+                    //alert(xmlhttp.responseText);
+                    var txt = xmlhttp.responseText
+                        .replace(/[\"]/g, '\\"')
+                        .replace(/[\\]/g, '\\\\')
+                        .replace(/[\/]/g, '\\/')
+                        .replace(/[\b]/g, '\\b')
+                        .replace(/[\f]/g, '\\f')
+                        .replace(/[\n]/g, '\\n')
+                        .replace(/[\r]/g, '\\r')
+                        .replace(/[\t]/g, '\\t');
+
+                    var listGioAutocomplete = eval("(" + xmlhttp.responseText + ")");
+                    $("#ContentPlaceHolder1_txtCH_QuanHuyen").autocomplete({
+
+                        minLength: 0,
+                        source: listGioAutocomplete,
+                        focus: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtCH_QuanHuyen").val(ui.item.label);
+                            return false;
+                        },
+                        select: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtCH_QuanHuyen").val(ui.item.value);
+                            $("#ContentPlaceHolder1_idCH_QuanHuyen").val(ui.item.id);
+                            document.getElementById('ContentPlaceHolder1_txtCH_PhuongXa').disabled = false;
+                            LoadPhuongXa_CH();
+                            return false;
+                        }
+                    }).focus(function () {
+                        $(this).autocomplete("search", "");
+                    });
+                }
+                else {
+                    alert("Lỗi không tìm thấy danh sách quận huyện!")
+                }
+
+            }
+        }
+        xmlhttp.open("GET", "Ajax_DKKS.aspx?Action=LoadQuanHuyen&Tinh=" + CH_TinhTP + "", true);
+        xmlhttp.send();
+    }
+}
+function LoadPhuongXa_CH() {
+    var CH_QuanHuyen = $('#ContentPlaceHolder1_idCH_QuanHuyen').val();
+    if (CH_QuanHuyen != "" && CH_QuanHuyen != "0") {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        }
+        else {// code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                if (xmlhttp.responseText != "") {
+                    //alert(xmlhttp.responseText);
+                    var txt = xmlhttp.responseText
+                        .replace(/[\"]/g, '\\"')
+                        .replace(/[\\]/g, '\\\\')
+                        .replace(/[\/]/g, '\\/')
+                        .replace(/[\b]/g, '\\b')
+                        .replace(/[\f]/g, '\\f')
+                        .replace(/[\n]/g, '\\n')
+                        .replace(/[\r]/g, '\\r')
+                        .replace(/[\t]/g, '\\t');
+
+                    var listGioAutocomplete = eval("(" + xmlhttp.responseText + ")");
+                    $("#ContentPlaceHolder1_txtCH_PhuongXa").autocomplete({
+
+                        minLength: 0,
+                        source: listGioAutocomplete,
+                        focus: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtCH_PhuongXa").val(ui.item.label);
+                            return false;
+                        },
+                        select: function (event, ui) {
+                            $("#ContentPlaceHolder1_txtCH_PhuongXa").val(ui.item.value);
+
+                            return false;
+                        }
+                    }).focus(function () {
+                        $(this).autocomplete("search", "");
+                    });
+                }
+                else {
+                    alert("Lỗi không tìm thấy danh sách Phường xã!")
+                }
+
+            }
+        }
+        xmlhttp.open("GET", "Ajax_DKKS.aspx?Action=LoadPhuongXa&QuanHuyen=" + CH_QuanHuyen + "", true);
+        xmlhttp.send();
+    }
 }

@@ -18,34 +18,14 @@ public partial class DKKhaiSinh : System.Web.UI.Page
             txtTTT_QuocGia_QQ.Value = "Việt Nam";
             txtTTT_QuocGia.Value = "Việt Nam";
             txtNYC_QuocGia.Value = "Việt Nam";
-            //LoadNoiCapNYC_CMND();
-            //LoadNoiCapTTM_CMND();
-            //LoadNoiCapTTC_CMND();
+            txtTTM_QuocTich.Value = "Việt Nam";
+            txtTTM_QuocGia.Value = "Việt Nam";
+            txtTTC_QuocGia.Value = "Việt Nam";
+            txtTTC_QuocTich.Value = "Việt Nam";
+            txtCH_QuocGia.Value = "Việt Nam";
         }
 
     }
-    //private void LoadNoiCapNYC_CMND()
-    //{
-    //    txtNYC_NoiCap.DataSource = Connect.GetTable("select * from tb_TinhTP Order By Ten Asc");
-    //    txtNYC_NoiCap.DataTextField = "Ten";
-    //    txtNYC_NoiCap.DataValueField = "Ten"; 
-    //    txtNYC_NoiCap.DataBind();
-    //}
-    //private void LoadNoiCapTTM_CMND()
-    //{
-    //    txtTTM_NoiCap.DataSource = Connect.GetTable("select * from tb_TinhTP Order By Ten Asc");
-    //    txtTTM_NoiCap.DataTextField = "Ten";
-    //    txtTTM_NoiCap.DataValueField = "Ten";
-    //    txtTTM_NoiCap.DataBind();
-    //}
-    //private void LoadNoiCapTTC_CMND()
-    //{
-    //    txtTTC_NoiCap.DataSource = Connect.GetTable("select * from tb_TinhTP Order By Ten Asc");
-    //    txtTTC_NoiCap.DataTextField = "Ten";
-    //    txtTTC_NoiCap.DataValueField = "Ten";
-    //    txtTTC_NoiCap.DataBind();
-    //}
-   
     protected void btExcel_Click(object sender, EventArgs e)
    {
         string sql = "";
