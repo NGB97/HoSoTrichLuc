@@ -1165,7 +1165,7 @@ public partial class Ajax : System.Web.UI.Page
             /*Form đăng kí khai Tử*/
             html += @"
             <div style='page-break-before:always'>
-            <div class='formA4'>
+            <div class='formcus'>
             <form>
                 <div class='text-center'>
                     <h4 class='title'> CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM </h4>
