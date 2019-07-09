@@ -27,9 +27,7 @@
         }
 
     </script>
-    <div class="check_qh margin_top" id="abc" runat="server">
-        <h3 class="dk">hệ thống đăng ký khai sinh</h3>
-    </div>
+
     <div class="container position top_ft">
         <div class="col-md-offset-1  col-md-10 bg_form">
             <div class=" bd_bottom">

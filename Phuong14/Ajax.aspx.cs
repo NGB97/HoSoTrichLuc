@@ -1307,7 +1307,7 @@ public partial class Ajax : System.Web.UI.Page
                             <span class='ten'>" + data.Rows[i]["NYC_HoTen"].ToString() + @"<span>
                         </p>
                         <p>[02]. Ngày, tháng, năm sinh:
-                            <span class='gt'>" + data.Rows[i]["NYC_NamSinh"].ToString() + @"</span>
+                            <span class='gt'>" +DateTime.Parse(data.Rows[i]["NYC_NamSinh"].ToString()).ToString("dd/MM/yyyy") + @"</span>
                             <span class='ttgiua'>[03]. Giới tính:
                                 <span class='gt'>" + data.Rows[i]["NYC_GioiTinh"].ToString() + @"</span>
                             </span>

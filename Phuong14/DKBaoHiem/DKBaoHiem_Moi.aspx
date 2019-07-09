@@ -17,9 +17,7 @@
             pikadayBH();
         }
     </script>
-    <div class="check_qh margin_top" id="Div1" runat="server">
-        <h3 class="dk">hệ thống đăng ký bảo hiểm</h3>
-    </div>
+    
     <div class="container position top_ft">
         <div class="col-md-offset-1  col-md-10 bg_form">
             <div class=" bd_bottom">

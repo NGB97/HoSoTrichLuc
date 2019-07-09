@@ -14,43 +14,71 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../Content/css/style.css">
     <link rel="stylesheet" href="../Content/css/menu.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand"  href="../index.html">
-                    <div class="logo_chu">
-                        <div class="col-xs-3 col-sm-2">
-                            <img src="../Content/img/quochuy.png" width="40px" alt="">
-                        </div>
-                        <div class="col-xs-9 col-sm-10">
-                            <h3 class="logo_chu1">UBND PHƯỜNG 14</h3>
-                            <p class="logo_chu2">HỆ THỐNG ĐĂNG KÝ GIẤY KHAI SINH TRỰC TUYẾN</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+    <style>
+        #footer {
+           position:absolute;
+           bottom:0;
+           width:100%;
+           padding: -5px;  /* Height of the footer */
+           background:#296849;
+        }
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+        .header {
+            height: 100px;
+            background-color: #296849;
+        }
+        
+        .logo {
+            position: relative;
+            display: block;
+            padding: 10px 0;
+            width: 250px;
+            text-align: center;
+        }
+
+        .img-logo {
+            height: 60px;
+            width: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .text-logo {
+            color: white;
+            font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+        }
+        .name-company{
+            width:100% !important;
+            position: absolute;
+            padding-left: 100px;
+            font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container-fluid" style="padding-left:unset">
+             <h3 class="logo name-company">CÔNG TY TNHH GIÁO DỤC VÀ ĐÀO TẠO QUỐC TẾ THÀNH PHỐ HỒ CHÍ MINH</h3>
+            <a class="logo" href="../index.html">
+                <img class="img-logo" src="../Content/img/logo-w.png" alt="" />
+                    <p class="text-logo"><b>The Foundation Of Knowledge</b></p>
+            </a>
+            
+        </div>
+    </div>
     <form id="form2" runat="server">
         <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-
             </asp:ContentPlaceHolder>
         </div>
     </form>
+    <div id="footer" class="footer">
+        <div class="container">
+            <div style="text-align:center;color:white;">
+                    <p style="font-size:13px;margin-top:5px;margin-bottom:5px !important;">Copy right © 2019&nbsp;<strong><a style="color:deepskyblue" href="http://academyhcm.edu.vn">Academy HCM</a></strong> | Design by <strong><a style="color:deepskyblue" href="http://academyhcm.edu.vn">Academy HCM</a></strong> All Rights Reserved</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
